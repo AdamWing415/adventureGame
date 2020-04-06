@@ -128,5 +128,56 @@
   <ItemGroup>
     <None Include="Resources\Rocket Thrusters-SoundBible.com-1432176431.wav" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\engineNoise.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\laser.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\snowman.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\explosion.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\footstep.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deathScreen.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deathsound.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warp sound.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sno kick.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\win screen.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\win ingame.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\crash.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shotimpact.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ship shots.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gunReady.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\beep.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spaceWhiteNoise.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

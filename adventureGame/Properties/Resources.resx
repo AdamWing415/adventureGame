@@ -118,38 +118,65 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="beep_07" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\beep-07.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="beep" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\beep.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="blue_50x50" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\blue_50x50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Cowboy_with_spurs_G_rant_1371954508" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Cowboy_with_spurs-G-rant-1371954508.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="crash" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\crash.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="deathScreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\deathScreen.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="deathsound" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\deathsound.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="engineNoise" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\engineNoise.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="explosion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\explosion.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="footstep" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\footstep.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="green_50x50" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\green_50x50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Gun_Cocking_Fast_Mike_Koenig_465593588" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Gun_Cocking_Fast-Mike_Koenig-465593588.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="gunReady" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gunReady.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="Harpoon_SoundBible_com_673032123" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Harpoon-SoundBible.com-673032123.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="Phone_Off_Hook_SoundBible_com_701991146" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Phone Off Hook-SoundBible.com-701991146.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="laser" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\laser.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="red_50x50" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\red_50x50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Rocket_Thrusters_SoundBible_com_1432176431" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Rocket Thrusters-SoundBible.com-1432176431.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="ship_shots" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ship shots.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="soundscrate_ebow_logo_sc1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\soundscrate-ebow-logo-sc1.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="shotimpact" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\shotimpact.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="soundscrate_slowmotion_sweep_sc1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\soundscrate-slowmotion-sweep-sc1.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="snowKick" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sno kick.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="snowman" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\snowman.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="spaceWhiteNoise" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\spaceWhiteNoise.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="warp_sound" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\warp sound.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="win_ingame" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\win ingame.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="win_screen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\win screen.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="yellow_50x50" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\yellow_50x50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

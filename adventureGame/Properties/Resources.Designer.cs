@@ -63,9 +63,9 @@ namespace adventureGame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream beep_07 {
+        internal static System.IO.UnmanagedMemoryStream beep {
             get {
-                return ResourceManager.GetStream("beep_07", resourceCulture);
+                return ResourceManager.GetStream("beep", resourceCulture);
             }
         }
         
@@ -82,9 +82,54 @@ namespace adventureGame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream Cowboy_with_spurs_G_rant_1371954508 {
+        internal static System.IO.UnmanagedMemoryStream crash {
             get {
-                return ResourceManager.GetStream("Cowboy_with_spurs_G_rant_1371954508", resourceCulture);
+                return ResourceManager.GetStream("crash", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream deathScreen {
+            get {
+                return ResourceManager.GetStream("deathScreen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream deathsound {
+            get {
+                return ResourceManager.GetStream("deathsound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream engineNoise {
+            get {
+                return ResourceManager.GetStream("engineNoise", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream explosion {
+            get {
+                return ResourceManager.GetStream("explosion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream footstep {
+            get {
+                return ResourceManager.GetStream("footstep", resourceCulture);
             }
         }
         
@@ -101,27 +146,18 @@ namespace adventureGame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream Gun_Cocking_Fast_Mike_Koenig_465593588 {
+        internal static System.IO.UnmanagedMemoryStream gunReady {
             get {
-                return ResourceManager.GetStream("Gun_Cocking_Fast_Mike_Koenig_465593588", resourceCulture);
+                return ResourceManager.GetStream("gunReady", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream Harpoon_SoundBible_com_673032123 {
+        internal static System.IO.UnmanagedMemoryStream laser {
             get {
-                return ResourceManager.GetStream("Harpoon_SoundBible_com_673032123", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
-        /// </summary>
-        internal static System.IO.UnmanagedMemoryStream Phone_Off_Hook_SoundBible_com_701991146 {
-            get {
-                return ResourceManager.GetStream("Phone_Off_Hook_SoundBible_com_701991146", resourceCulture);
+                return ResourceManager.GetStream("laser", resourceCulture);
             }
         }
         
@@ -138,27 +174,72 @@ namespace adventureGame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream Rocket_Thrusters_SoundBible_com_1432176431 {
+        internal static System.IO.UnmanagedMemoryStream ship_shots {
             get {
-                return ResourceManager.GetStream("Rocket_Thrusters_SoundBible_com_1432176431", resourceCulture);
+                return ResourceManager.GetStream("ship_shots", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream soundscrate_ebow_logo_sc1 {
+        internal static System.IO.UnmanagedMemoryStream shotimpact {
             get {
-                return ResourceManager.GetStream("soundscrate_ebow_logo_sc1", resourceCulture);
+                return ResourceManager.GetStream("shotimpact", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream soundscrate_slowmotion_sweep_sc1 {
+        internal static System.IO.UnmanagedMemoryStream snowKick {
             get {
-                return ResourceManager.GetStream("soundscrate_slowmotion_sweep_sc1", resourceCulture);
+                return ResourceManager.GetStream("snowKick", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream snowman {
+            get {
+                return ResourceManager.GetStream("snowman", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream spaceWhiteNoise {
+            get {
+                return ResourceManager.GetStream("spaceWhiteNoise", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream warp_sound {
+            get {
+                return ResourceManager.GetStream("warp_sound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream win_ingame {
+            get {
+                return ResourceManager.GetStream("win_ingame", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream win_screen {
+            get {
+                return ResourceManager.GetStream("win_screen", resourceCulture);
             }
         }
         

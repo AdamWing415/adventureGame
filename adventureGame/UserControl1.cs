@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using System.Media;
 
 namespace adventureGame
 {
@@ -17,6 +18,8 @@ namespace adventureGame
         Random randCheck = new Random();
         double scene = 1;
         int rand;
+        bool pause = false;
+        SoundPlayer warp = new SoundPlayer(Properties.Resources.warp_sound);
 
         public gameScreen()
         {
@@ -28,6 +31,7 @@ namespace adventureGame
             EventLabel.Text = "You enter a new star system";
             redLabel.Text = "Stop here";
             blueLabel.Text = "Continue onward";
+            warp.Play();
             Refresh();
         }
 
@@ -35,7 +39,7 @@ namespace adventureGame
 
         private void gameScreen_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.B)//blue button press
+            if (e.KeyCode == Keys.B && pause == false)//blue button press
             {
                 if (scene == 1) { scene = 2; }
 
@@ -225,7 +229,8 @@ namespace adventureGame
                 else if (scene == 99) { scene = 1; }
 
             }
-            else if (e.KeyCode == Keys.M) //red button pressed
+
+            else if (e.KeyCode == Keys.M && pause == false) //red button pressed
             {
                 if (scene == 1) { scene = 3; }
 
@@ -275,681 +280,820 @@ namespace adventureGame
 
                 else if (scene == 99) { System.Windows.Forms.Application.Exit(); }
 
-
-
-                else if (e.KeyCode == Keys.N) //yellow button pressed
-                {
-                    if (scene == 14) { scene = 15; }
-
-                    else if (scene == 26.1) { scene = 37; }
-
-                    else if (scene == 29) { scene = 31; }
-
-                    else if (scene == 32) { scene = 31; }
-
-                    else if (scene == 33) { scene = 31; }
-
-                    else if (scene == 34) { scene = 31; }
-                }
-                else if (e.KeyCode == Keys.Space) //green button pressed
-                {
-
-                    if (scene == 26.1) { scene = 28; }
-
-                }
-                else if (e.KeyCode == Keys.Escape) //pause button pressed
-                {
-
-
-                }
-
-
-                switch (scene)
-                {
-                    case 1:
-                        EventLabel.Text = "You enter a new star system";
-                        redLabel.Text = "Stop here";
-                        blueLabel.Text = "Continue onward";
-                        Refresh();
-                        break;
-
-                    case 2:
-                        EventLabel.Text = "You pass three small planets and continue towards the blackness of empty space";
-                        redLabel.Text = "Don't jump to next system";
-                        blueLabel.Text = "Jump to next system";
-                        Refresh();
-                        break;
-
-                    case 3:
-                        EventLabel.Text = "You look around and see 3 planets in close orbit to each other around a small star";
-                        redLabel.Text = "Move closer";
-                        blueLabel.Text = "Continue onward";
-                        Refresh();
-                        break;
-
-                    case 4:
-                        EventLabel.Text = "You warp out of the system";
-                        blueLabel.Text = "Continue";
-                        redButton.Hide();
-                        redLabel.Hide();
-                        Refresh();
-                        break;
-
-                    case 5:
-                        EventLabel.Text = "The gravity of the planets proves to great for your ship's engines \n You can feel yourself getting pulled in";
-                        blueLabel.Text = "Continue";
-                        redButton.Hide();
-                        redLabel.Hide();
-                        Refresh();
-                        break;
-                    case 5.1:
-                        EventLabel.Text = "Your ship 's engines fail and you plummet to your death on the planets below";
-                        blueLabel.Text = "Continue";
-                        Refresh();
-                        break;
-                    case 5.2:
-                        EventLabel.Text = "You steady your throttle and slip ot of the gravitation pull of the planets safely";
-                        blueLabel.Text = "Continue";
-                        Refresh();
-                        break;
-                    case 5.3:
-                        EventLabel.Text = "Your ship 's engines fail and you plummet to your death on the planets below";
-                        blueLabel.Text = "Continue";
-                        Refresh();
-                        break;
-
-                    case 6:
-                        EventLabel.Text = "You end your jump to find yourself facing the edge of a great nebula";
-                        blueLabel.Text = "Continue";
-                        Refresh();
-                        redButton.Hide();
-                        redLabel.Hide();
-                        break;
-                    case 6.1:
-                        EventLabel.Text = "Though the sight is pleasing, there is nothing of value in this sector \n  You warp away";
-                        blueLabel.Text = "Continue";
-                        Refresh();
-                        break;
-
-                    case 7:
-                        redButton.Show();
-                        redLabel.Show();
-                        EventLabel.Text = "You arrive in a new system to see a dying star and a few trade vessels still orbiting around some of the dead worlds";
-                        blueLabel.Text = "Leave the system";
-                        redLabel.Text = "Stay";
-                        Refresh();
-                        break;
-
-                    case 8:
-                        redButton.Hide();
-                        redLabel.Hide();
-                        EventLabel.Text = "The dead star looms in front of you, and you see two slick, black ships warp into the system behind you";
-                        blueLabel.Text = "Continue";
-                        Refresh();
-                        break;
-                    case 8.1:
-                        redButton.Show();
-                        redLabel.Show();
-                        EventLabel.Text = "The two ships seem to be headed straight for you";
-                        blueLabel.Text = "Warp away";
-                        redLabel.Text = "Hold your ground";
-                        Refresh();
-                        break;
-
-                    case 9:
-                        redButton.Show();
-                        redLabel.Show();
-                        EventLabel.Text = "You warp to a new star system and see a trade frigate ahead";
-                        blueLabel.Text = "Stay put";
-                        redLabel.Text = "Approach the frigate";
-                        Refresh();
-                        break;
-
-                    case 10:
-                        redButton.Hide();
-                        redLabel.Hide();
-                        EventLabel.Text = "As you prepare to move on, you see a few more ships enter the system, catching your eye";
-                        blueLabel.Text = "Continue";
-                        Refresh();
-                        break;
-                    case 10.1:
-                        EventLabel.Text = "The ships approach the frigate, which you are now just passing on your way out of the system";
-                        blueLabel.Text = "Continue";
-                        Refresh();
-                        break;
-
-                    case 11:
-                        EventLabel.Text = "You fly towards the frigate and see a few more ships warp into the system, clearly eager to trade";
-                        blueLabel.Text = "Hail the frigate";
-                        redLabel.Text = "Dont hail the frigate";
-                        Refresh();
-                        break;
-
-                    case 12:
-                        redButton.Hide();
-                        redLabel.Hide();
-                        EventLabel.Text = "you flip the switch  to open your comms but before you say anything, the new arrivals once again catch  your eye";
-                        blueLabel.Text = "Continue";
-                        Refresh();
-                        break;
-
-                    case 13:
-                        EventLabel.Text = "The ships are black and shimmering \n Now that they are so close, you can see they appear to be fighters";
-                        blueLabel.Text = "Continue";
-                        Refresh();
-                        break;
-                    case 13.1:
-                        EventLabel.Text = "Flying in tight formation, the ships don't appear to be slowing as they approach the frigate \n  You see one fly ahead slightly and it disappears behind the bridge of the frigate";
-                        blueLabel.Text = "Continue";
-                        Refresh();
-                        break;
-                    case 13.2:
-                        EventLabel.Text = "Suddenly the bridge errupts in a massive explosion, oxygen ripping out from the gaping hole left where the bridge was only moments ago";
-                        blueLabel.Text = "Continue";
-                        Refresh();
-                        break;
-                    case 13.3:
-                        EventLabel.Text = "Your ship is caught in the explosion and you perish";
-                        blueLabel.Text = "Continue";
-                        Refresh();
-                        break;
-                    case 13.4:
-                        redButton.Show();
-                        redLabel.Show();
-                        EventLabel.Text = "You are thrown away from the frigate by the force of the blast and see the black ships soar through the debris, counting four in total";
-                        blueLabel.Text = "Pursue the ships";
-                        redLabel.Text = "Don't pursue the ships";
-                        Refresh();
-                        break;
-
-                    case 14:
-                        yellowButton.Show();
-                        yellowLabel.Show();
-                        EventLabel.Text = "You slowly begin your approach on the ships, they've slowed their flight and are beginning to group up";
-                        blueLabel.Text = "Continue your approach";
-                        redLabel.Text = "Fire upon the ships";
-                        yellowLabel.Text = "Hail the ships";
-                        Refresh();
-                        break;
-
-                    case 15:
-                        yellowButton.Hide();
-                        yellowLabel.Hide();
-                        redLabel.Hide();
-                        redButton.Hide();
-                        EventLabel.Text = "You open all common channels and ask the ships if they got out of the explosion OK \n They do not respond, instead spinning their ship around and firing on you";
-                        blueLabel.Text = "Continue";
-                        Refresh();
-                        break;
-
-                    case 16:
-                        redLabel.Hide();
-                        redButton.Hide();
-                        EventLabel.Text = "You lock on and fire, but before the plasma bolt reaches the group of ships, they break into evasive maneuvers \n Your bolt flies straight through the pack and the ships whip around to face you  ";
-                        blueLabel.Text = "Continue";
-                        Refresh();
-                        break;
-                    case 16.1:
-                        EventLabel.Text = "They don't hesitate to fire, ripping your craft to shreds in an instant";
-                        blueLabel.Text = "Continue";
-                        Refresh();
-                        break;
-
-                    case 17:
-                        EventLabel.Text = "Slowly, you continue your flight towards the now near stationary group of ships";
-                        blueLabel.Text = "Fire";
-                        redLabel.Text = "Hail";
-                        Refresh();
-                        break;
-
-                    case 18:
-                        redLabel.Hide();
-                        redButton.Hide();
-                        EventLabel.Text = "You are close enough to the group now that there is no need to lock on \n You fire on the group, hitting on ship, destroying it instantly";
-                        blueLabel.Text = "Continue";
-                        Refresh();
-                        break;
-                    case 18.1:
-                        EventLabel.Text = "The explosion of the ship's boost drive rips across your vision, engulfing the ship beside it, ripping it's wing straight off, disabling the ship";
-                        blueLabel.Text = "Continue";
-                        Refresh();
-                        break;
-                    case 18.2:
-                        redButton.Show();
-                        redLabel.Show();
-                        EventLabel.Text = "The two remaining ship whip around to face you and open fire";
-                        blueLabel.Text = "Return fire";
-                        redLabel.Text = "Flee";
-                        Refresh();
-                        break;
-
-                    case 19:
-                        redLabel.Hide();
-                        redButton.Hide();
-                        EventLabel.Text = "You select a recent destination from your console and warp out, seeing the remaining two ships close behind as you leave the system";
-                        blueLabel.Text = "Continue";
-                        Refresh();
-                        break;
-                    case 19.1:
-                        EventLabel.Text = "You arrive to see a dead star looming in front of you \n You also see the black ships arrive behind you";
-                        blueLabel.Text = "Continue";
-                        Refresh();
-                        break;
-
-                    case 20:
-                        redLabel.Hide();
-                        redButton.Hide();
-                        EventLabel.Text = "You fire off as much of your arsenal as you can in one burst, striking the ship on the left \n  The ship on the right still stands.";
-                        blueLabel.Text = "Continue";
-                        Refresh();
-                        break;
-                    case 20.1:
-                        EventLabel.Text = "The remaining ship pauses its assault to evade your shots, quickly resuming fire afterwards";
-                        blueLabel.Text = "Continue";
-                        Refresh();
-                        break;
-                    case 20.2:
-                        EventLabel.Text = "The ship doesn't slow it's attack, overwhelming you and destroying your ship completely ";
-                        blueLabel.Text = "Continue";
-                        Refresh();
-                        break;
-
-                    case 21:
-                        redButton.Show();
-                        redLabel.Show();
-                        EventLabel.Text = "The two ship open fire on you, damaging your right engine, forcing you to head towards one of the near-by planets";
-                        blueLabel.Text = "Head left";
-                        redLabel.Text = "Head right";
-                        Refresh();
-                        break;
-
-                    case 22:
-                        redLabel.Hide();
-                        redButton.Hide();
-                        EventLabel.Text = "You hurtle towards a rocky planet, smashing into the surface with considerable force.";
-                        blueLabel.Text = "Continue";
-                        Refresh();
-                        break;
-                    case 22.1:
-                        EventLabel.Text = "You are dashed on the rocks, but barely survive \n As you crawl from the burnt hull of your ship, you discover that your leg is broken.";
-                        blueLabel.Text = "Continue";
-                        Refresh();
-                        break;
-                    case 22.2:
-                        EventLabel.Text = "The two ships land nearby, and out climb two figures clad in all black armor, they approach you";
-                        blueLabel.Text = "Continue";
-                        break;
-                    case 22.3:
-                        EventLabel.Text = "They observe your state silently, before walking off, leaving you to die";
-                        blueLabel.Text = "Continue";
-                        break;
-                    case 22.4:
-                        EventLabel.Text = "As the figures draw near, one draws a sidearm, and fires";
-                        blueLabel.Text = "Continue";
-                        break;
-                    case 22.5:
-                        EventLabel.Text = "As the figures near your location, one draws a knife, hurling it with considerable force into your chest, killing you";
-                        blueLabel.Text = "Continue";
-                        break;
-
-                    case 23:
-                        EventLabel.Text = "You land hot on a planet draped in snow \n Exiting your ship, you see the two black ships landing a few hundred meters away ";
-                        blueLabel.Text = "Hide";
-                        redLabel.Text = "Approach the ships";
-                        Refresh();
-                        break;
-
-                    case 24:
-                        redLabel.Hide();
-                        redButton.Hide();
-                        EventLabel.Text = "You climb from the wreckage of your ship, drawing your weapon and advancing towards the pair of sinister black ships";
-                        blueLabel.Text = "Continue";
-                        Refresh();
-                        break;
-                    case 24.1:
-                        redButton.Show();
-                        redLabel.Show();
-                        EventLabel.Text = "A large figure covered in black armor resembling their ship rises from each of the two vessels, rifles in hand";
-                        blueLabel.Text = "Aim left";
-                        redLabel.Text = "Aim right";
-                        Refresh();
-                        break;
-
-                    case 25:
-                        redLabel.Hide();
-                        redButton.Hide();
-                        EventLabel.Text = "You swing your weapon towards the right figure, firing as it stands \n The shot hits thick armor";
-                        blueLabel.Text = "Continue";
-                        Refresh();
-                        break;
-                    case 25.1:
-                        EventLabel.Text = "The figure stumbles, but doesn't fall \n The figure on the left has his weapon drawn at this point, it aims and fires.";
-                        blueLabel.Text = "Continue";
-                        Refresh();
-                        break;
-
-                    case 26:
-                        redLabel.Hide();
-                        redButton.Hide();
-                        EventLabel.Text = "You aim and fire at the left figure, you shot glancing off of one of the plates covering the figure's abdomen";
-                        blueLabel.Text = "Continue";
-                        Refresh();
-                        break;
-                    case 26.1:
-                        redButton.Show();
-                        redLabel.Show();
-                        yellowLabel.Show();
-                        yellowButton.Show();
-                        greenButton.Show();
-                        greenLabel.Show();
-                        EventLabel.Text = "The figure recoils slightly at the impact but remains unharmed \n The figure on the right begins to climb down from his ship, you realize you need a new strategy";
-                        blueLabel.Text = "Kick up a cloud of snow";
-                        redLabel.Text = "Take cover";
-                        yellowLabel.Text = "Fire again";
-                        greenLabel.Text = "Charge towards the enemies";
-                        Refresh();
-                        break;
-
-                    case 27:
-                        redLabel.Hide();
-                        redButton.Hide();
-                        EventLabel.Text = "You quickly duck behind the wreckage of your ship and bury yourself in the snow";
-                        blueLabel.Text = "Continue";
-                        Refresh();
-                        break;
-                    case 27.1:
-                        EventLabel.Text = "A long time passes where you can hear two entities searching the area \n You feel very cold, but don't dare reveal yourself, they don't seem to be leaving anytime soon.";
-                        blueLabel.Text = "Continue";
-                        Refresh();
-                        break;
-                    case 27.2:
-                        EventLabel.Text = "You stay still for what feels like eternity before you finally hear the two figures walking off and their ships leaving";
-                        blueLabel.Text = "Continue";
-                        Refresh();
-                        break;
-                    case 27.3:
-                        EventLabel.Text = "You find yourself unable to move, and suddenly realize that you cannot feel any of your extremities \n You die of hypothermia";
-                        blueLabel.Text = "Continue";
-                        Refresh();
-                        break;
-                    case 27.4:
-                        EventLabel.Text = "You stand up and shake off the snow, spying a trade post in the distance \n You begin your trek towards it, free of the mysterious ships that have caused your current situation.";
-                        blueLabel.Text = "Continue";
-                        Refresh();
-                        break;
-
-                    case 28:
-                        redButton.Hide();
-                        redLabel.Hide();
-                        yellowLabel.Hide();
-                        yellowButton.Hide();
-                        greenButton.Hide();
-                        greenLabel.Hide();
-                        EventLabel.Text = "You launch yourself towards the enemy descending the ladder on the right \n Just before you reach him, you spy the figure on the left recovering";
-                        blueLabel.Text = "Continue";
-                        Refresh();
-                        break;
-                    case 28.1:
-                        EventLabel.Text = "The figure stands tall once more, aiming its rifle straight at your head, a red laser burning into your retinas \n It fires.";
-                        blueLabel.Text = "Continue";
-                        Refresh();
-                        break;
-
-                    case 29:
-                        greenButton.Hide();
-                        greenLabel.Hide();
-                        EventLabel.Text = "You swing your leg in a wide arc around your base, sending a thick mist of white snow shooting off ten feet from you";
-                        blueLabel.Text = "Kick more snow";
-                        redLabel.Text = "Take cover";
-                        yellowLabel.Text = "Chrage";
-                        Refresh();
-                        break;
-
-                    case 30:
-                        redButton.Hide();
-                        redLabel.Hide();
-                        yellowLabel.Hide();
-                        yellowButton.Hide();
-                        EventLabel.Text = "You use the white smog to sneak behind a nearby rock and lie in wait \n The smoke begins to clear and you line up a clear shot on the right side enemy";
-                        blueLabel.Text = "Continue";
-                        Refresh();
-                        break;
-
-                    case 31:
-                        redButton.Hide();
-                        redLabel.Hide();
-                        yellowLabel.Hide();
-                        yellowButton.Hide();
-                        EventLabel.Text = "You pierce through the cloud of white haze you've created and catch the enemy on the right by surprise \n throwing it to the ground, you stick your gun between its armor plates, pulling the trigger, killing it ";
-                        blueLabel.Text = "Continue";
-                        Refresh();
-                        break;
-
-                    case 32:
-                        EventLabel.Text = "You repeat your last action, prolonging the mist hanginging around you";
-                        blueLabel.Text = "Kick more snow";
-                        redLabel.Text = "Take cover";
-                        yellowLabel.Text = "Chrage";
-                        Refresh();
-                        break;
-
-                    case 33:
-                        EventLabel.Text = "You repeat your last action, prolonging the mist hanginging around you";
-                        blueLabel.Text = "Kick more snow";
-                        redLabel.Text = "Take cover";
-                        yellowLabel.Text = "Chrage";
-                        Refresh();
-                        break;
-
-                    case 34:
-                        EventLabel.Text = "You repeat your last action, prolonging the mist hanginging around you";
-                        blueLabel.Text = "Kick more snow";
-                        redLabel.Text = "Take cover";
-                        yellowLabel.Text = "Chrage";
-                        Refresh();
-                        break;
-
-                    case 35:
-                        redButton.Hide();
-                        redLabel.Hide();
-                        yellowLabel.Hide();
-                        yellowButton.Hide();
-                        EventLabel.Text = "There is no more snow for you to kick, your foot sweeps through air \n  The mist settles, revealing...  A snowman!  ";
-                        blueLabel.Text = "Continue";
-                        Refresh();
-                        break;
-                    case 35.1:
-                        EventLabel.Text = "Your kicks had such precision to them that they managed to create a crude, but recognizable snowman!";
-                        blueLabel.Text = "Continue";
-                        Refresh();
-                        break;
-                    case 35.2:
-                        EventLabel.Text = "Slightly stunned, your armor-clad adversaries stride towards your creation, marveling \n They examine it, giving a nod of approval";
-                        blueLabel.Text = "Continue";
-                        Refresh();
-                        break;
-                    case 35.3:
-                        EventLabel.Text = "They walk back to their ships, satisfied with what they've seen, leaving you sitting in stunned silence for a moment";
-                        blueLabel.Text = "Continue";
-                        Refresh();
-                        break;
-
-                    case 36:
-                        redButton.Hide();
-                        redLabel.Hide();
-                        yellowLabel.Hide();
-                        yellowButton.Hide();
-                        greenButton.Hide();
-                        greenLabel.Hide();
-                        EventLabel.Text = "You sprint towards the nearest boulder, but are caught out by the left enemy, recovered from the shot they took \n Their bullets rip through you, killing you instantly";
-                        blueLabel.Text = "Continue";
-                        Refresh();
-                        break;
-
-                    case 37:
-                        redButton.Hide();
-                        redLabel.Hide();
-                        yellowLabel.Hide();
-                        yellowButton.Hide();
-                        greenButton.Hide();
-                        greenLabel.Hide();
-                        EventLabel.Text = "You fire another shot at the staggered enemy on the left, knocking them over and off their ship \n You turn your attention towards the right side enemy";
-                        blueLabel.Text = "Continue";
-                        Refresh();
-                        break;
-                    case 37.1:
-                        EventLabel.Text = "It reaches the bottom of the ladder from its ship and reaches up to draw its weapon from its back, exposing its un-armored underarm";
-                        blueLabel.Text = "Continue";
-                        Refresh();
-                        break;
-                    case 37.2:
-                        EventLabel.Text = "You miss slightly, the shot hitting the cold metal of the ship behind the figure, who finishes drawing its weapon, shooting to kill";
-                        blueLabel.Text = "Continue";
-                        Refresh();
-                        break;
-                    case 37.3:
-                        EventLabel.Text = "You score a hit, sending the figure reeling, blood dripping from the wound, you quickly sprint over finishing the job";
-                        blueLabel.Text = "Continue";
-                        Refresh();
-                        break;
-                    case 37.4:
-                        redButton.Show();
-                        redLabel.Show();
-                        EventLabel.Text = "There is now only one enemy left, you spin around to face it, standing, seething at the foot of its ship's landing gear \n A scuff is visible on its right abdominal plate";
-                        blueLabel.Text = "Pick up the fallen enemy's rifle";
-                        redLabel.Text = "Keep your handgun";
-                        Refresh();
-                        break;
-
-                    case 38:
-                        redButton.Hide();
-                        redLabel.Hide();
-                        EventLabel.Text = "You carefully check your weapon's battery \n Seeing it has seven shots left, you raise your weapon and fire three shots quickly";
-                        blueLabel.Text = "Continue";
-                        Refresh();
-                        break;
-                    case 38.1:
-                        EventLabel.Text = "The shots ring out, striking the chest of the figure, sending it back into the leg of the landing gear";
-                        blueLabel.Text = "Continue";
-                        Refresh();
-                        break;
-                    case 38.2:
-                        EventLabel.Text = "Suddenly, the ship begins to rise, and you see that the figure has a glowing panel on its arm, controlling the ship remotely \n Grasping the leg of the landing gear, the figure rises into the air, drawing its weapon";
-                        blueLabel.Text = "Continue";
-                        Refresh();
-                        break;
-                    case 38.3:
-                        EventLabel.Text = "It lets loose 7 shots, and you throw yourself to the ground, narrowly avoiding the being hit \n You get back up and face the ship, which is now circling the area";
-                        blueLabel.Text = "Continue";
-                        Refresh();
-                        break;
-                    case 38.4:
-                        EventLabel.Text = "The ship turns to face you, the main forward guns spark up, eviscerating you in an instant";
-                        blueLabel.Text = "Continue";
-                        Refresh();
-                        break;
-                    case 38.5:
-                        EventLabel.Text = "The figure activates the ship's side cannons, but you are prepared and dodge behind a rock, the blasts erupting around you \n You duck back out from behind your cover for only a second";
-                        blueLabel.Text = "Continue";
-                        Refresh();
-                        break;
-                    case 38.6:
-                        EventLabel.Text = "You raise you gun at the ship and fire two of your last 4 shot, scoring a hit on an exposed area of the engine \n The figure drops from the smoking ship, landing with a crunch in the fresh snow.";
-                        blueLabel.Text = "Continue";
-                        Refresh();
-                        break;
-                    case 38.7:
-                        redButton.Show();
-                        redLabel.Show();
-                        EventLabel.Text = "The ship begins an uncontrollable spin, sending in into a line of dead trees a few hundred meters away, spewing fire a skyscraper's height into the sky";
-                        blueLabel.Text = "Attack";
-                        redLabel.Text = "Make for cover";
-                        Refresh();
-                        break;
-
-                    case 39:
-                        redButton.Hide();
-                        redLabel.Hide();
-                        EventLabel.Text = "You reach down to pick up the fallen figure's rifle, keeping eyes on the enraged figure the whole while";
-                        blueLabel.Text = "Continue";
-                        Refresh();
-                        break;
-                    case 39.1:
-                        EventLabel.Text = "You suddenly feel a sharp pain in your neck, no weapon has been draw on your foe's side, you look down slowly.";
-                        blueLabel.Text = "Continue";
-                        Refresh();
-                        break;
-                    case 39.2:
-                        EventLabel.Text = "With its last breath, the enemy you thought was finished stabbed you through the base of your neck with a large combat knife \n You fall to the ground shaking and bleed out";
-                        blueLabel.Text = "Continue";
-                        Refresh();
-                        break;
-
-                    case 40:
-                        redButton.Hide();
-                        redLabel.Hide();
-                        EventLabel.Text = "You wait for the figure to rise to its full height, exposing a chip in a plate right at the base of its neck";
-                        blueLabel.Text = "Continue";
-                        Refresh();
-                        break;
-                    case 40.1:
-                        EventLabel.Text = "You shoot just once and aim to kill";
-                        blueLabel.Text = "Continue";
-                        Refresh();
-                        break;
-                    case 40.2:
-                        EventLabel.Text = "You hit the figure right in the weak link in its armor \n It crumples to the floor, motionless";
-                        blueLabel.Text = "Continue";
-                        Refresh();
-                        break;
-                    case 40.3:
-                        EventLabel.Text = "It is finally over, you look around at the chaos surrounding you \n You turn back to the only ship left standing and climb in, now free to continue your voyage across the cosmos unheeded \n For now.";
-                        blueLabel.Text = "Continue";
-                        Refresh();
-                        break;
-
-                    case 41:
-                        EventLabel.Text = "You duck behind a rock just as a shot whizzes past you ear \n You wait only a moment before thrusting your gun out ahead of the rest of your body.";
-                        blueLabel.Text = "Continue";
-                        Refresh();
-                        break;
-                    case 41.1:
-                        EventLabel.Text = "You catch the figure reloading and notice a crack in a panel just below the figure's neck";
-                        blueLabel.Text = "Continue";
-                        Refresh();
-                        break;
-
-                    case 97:
-                        redButton.Show();
-                        redLabel.Show();
-                        EventLabel.Text = "You fly off without looking back, off into the blackness of space \n \n  Congratulations on surviving!";
-                        blueLabel.Text = "Play again";
-                        redLabel.Text = "Exit game";
-                        Refresh();
-                        break;
-
-                    case 98:
-                        redButton.Show();
-                        redLabel.Show();
-                        EventLabel.Text = "You continue on your way, hoping to put this day's events behind you";
-                        blueLabel.Text = "Play again";
-                        redLabel.Text = "Exit game";
-                        Refresh();
-                        break;
-
-                    case 99:
-                        redButton.Show();
-                        redLabel.Show();
-                        EventLabel.Text = "You have died.";
-                        blueLabel.Text = "Play again";
-                        redLabel.Text = "Exit game";
-                        Refresh();
-                        break;
-
-                }
             }
 
+            else if (e.KeyCode == Keys.N) //yellow button pressed
+            {
+                if (scene == 14) { scene = 15; }
 
+                else if (scene == 26.1) { scene = 37; }
+
+                else if (scene == 29) { scene = 31; }
+
+                else if (scene == 32) { scene = 31; }
+
+                else if (scene == 33) { scene = 31; }
+
+                else if (scene == 34) { scene = 31; }
+            }
+            else if (e.KeyCode == Keys.Space) //green button pressed
+            {
+
+                if (scene == 26.1) { scene = 28; }
+
+            }
+            else if (e.KeyCode == Keys.Escape) //pause button pressed
+            {
+                pause = true;
+
+                pauseBlue.Show();
+                pauseRed.Show();
+                resumeLabel.Show();
+                exitLabel.Show();
+                pauseBack.Show();
+                Refresh();
+            }
+            if (e.KeyCode == Keys.B && pause == true)
+            {
+                pauseBack.Hide();
+                pauseBlue.Hide();
+                pauseRed.Hide();
+                resumeLabel.Hide();
+                exitLabel.Hide();
+                Refresh();
+                pause = false;
+            }
+            if (e.KeyCode == Keys.M && pause == true)
+            {
+                System.Windows.Forms.Application.Exit();
+            }
+
+            SoundPlayer whiteNoise = new SoundPlayer(Properties.Resources.spaceWhiteNoise);
+            SoundPlayer engine = new SoundPlayer(Properties.Resources.engineNoise);
+            SoundPlayer explosion = new SoundPlayer(Properties.Resources.explosion);
+            SoundPlayer death = new SoundPlayer(Properties.Resources.deathsound);
+            SoundPlayer beep = new SoundPlayer(Properties.Resources.beep);
+            SoundPlayer shipFiring = new SoundPlayer(Properties.Resources.ship_shots);
+            SoundPlayer crash = new SoundPlayer(Properties.Resources.crash);
+            SoundPlayer step = new SoundPlayer(Properties.Resources.footstep);
+            SoundPlayer aim = new SoundPlayer(Properties.Resources.gunReady);
+            SoundPlayer shoot = new SoundPlayer(Properties.Resources.laser);
+            SoundPlayer impact = new SoundPlayer(Properties.Resources.shotimpact);
+            SoundPlayer ingameWin = new SoundPlayer(Properties.Resources.win_ingame);
+            SoundPlayer kick = new SoundPlayer(Properties.Resources.snowKick);
+            SoundPlayer snowman = new SoundPlayer(Properties.Resources.snowman);
+            SoundPlayer winScreen = new SoundPlayer(Properties.Resources.win_screen);
+            SoundPlayer deathScreen = new SoundPlayer(Properties.Resources.deathScreen);
+
+            switch (scene)
+            {
+                case 1:
+                    EventLabel.Text = "You enter a new star system";
+                    redLabel.Text = "Stop here";
+                    blueLabel.Text = "Continue onward";
+                    warp.Play();
+                    Refresh();
+                    break;
+
+                case 2:
+                    EventLabel.Text = "You pass three small planets and continue towards the blackness of empty space";
+                    redLabel.Text = "Don't jump to next system";
+                    blueLabel.Text = "Jump to next system";
+                    whiteNoise.Play();
+                    Refresh();
+                    break;
+
+                case 3:
+                    EventLabel.Text = "You look around and see 3 planets in close orbit to each other around a small star";
+                    redLabel.Text = "Move closer";
+                    blueLabel.Text = "Continue onward";
+                    whiteNoise.Play();
+                    Refresh();
+                    break;
+
+                case 4:
+                    EventLabel.Text = "You warp out of the system";
+                    blueLabel.Text = "Continue";
+                    redButton.Hide();
+                    redLabel.Hide();
+                    warp.Play();
+                    Refresh();
+                    break;
+
+                case 5:
+                    EventLabel.Text = "The gravity of the planets proves to great for your ship's engines \n You can feel yourself getting pulled in";
+                    blueLabel.Text = "Continue";
+                    redButton.Hide();
+                    redLabel.Hide();
+                    engine.Play();
+                    Refresh();
+                    break;
+                case 5.1:
+                    EventLabel.Text = "Your ship 's engines fail and you plummet to your death on the planets below";
+                    blueLabel.Text = "Continue";
+                    explosion.Play();
+                    Refresh();
+                    break;
+                case 5.2:
+                    EventLabel.Text = "You steady your throttle and slip ot of the gravitation pull of the planets safely";
+                    blueLabel.Text = "Continue";
+                    engine.Play();
+                    Refresh();
+                    break;
+                case 5.3:
+                    EventLabel.Text = "Your ship 's engines fail and you plummet to your death on the planets below";
+                    blueLabel.Text = "Continue";
+                    explosion.Play();
+                    Refresh();
+                    break;
+
+                case 6:
+                    EventLabel.Text = "You end your jump to find yourself facing the edge of a great nebula";
+                    blueLabel.Text = "Continue";
+                    warp.Play();
+                    redButton.Hide();
+                    redLabel.Hide();
+                    Refresh();
+                    break;
+                case 6.1:
+                    EventLabel.Text = "Though the sight is pleasing, there is nothing of value in this sector \n  You warp away";
+                    blueLabel.Text = "Continue";
+                    warp.Play();
+                    Refresh();
+                    break;
+
+                case 7:
+                    redButton.Show();
+                    redLabel.Show();
+                    EventLabel.Text = "You arrive in a new system to see a dying star and a few trade vessels still orbiting around some of the dead worlds";
+                    blueLabel.Text = "Leave the system";
+                    redLabel.Text = "Stay";
+                    warp.Play();
+                    Refresh();
+                    break;
+
+                case 8:
+                    redButton.Hide();
+                    redLabel.Hide();
+                    EventLabel.Text = "The dead star looms in front of you, and you see two slick, black ships warp into the system behind you";
+                    blueLabel.Text = "Continue";
+                    warp.Play();
+                    Refresh();
+                    break;
+                case 8.1:
+                    redButton.Show();
+                    redLabel.Show();
+                    EventLabel.Text = "The two ships seem to be headed straight for you";
+                    blueLabel.Text = "Warp away";
+                    redLabel.Text = "Hold your ground";
+                    whiteNoise.Play();
+                    Refresh();
+                    break;
+
+                case 9:
+                    redButton.Show();
+                    redLabel.Show();
+                    EventLabel.Text = "You warp to a new star system and see a trade frigate ahead";
+                    blueLabel.Text = "Stay put";
+                    redLabel.Text = "Approach the frigate";
+                    warp.Play();
+                    Refresh();
+                    break;
+
+                case 10:
+                    redButton.Hide();
+                    redLabel.Hide();
+                    EventLabel.Text = "As you prepare to move on, you see a few more ships enter the system, catching your eye";
+                    blueLabel.Text = "Continue";
+                    warp.Play();
+                    Refresh();
+                    break;
+                case 10.1:
+                    EventLabel.Text = "The ships approach the frigate, which you are now just passing on your way out of the system";
+                    blueLabel.Text = "Continue";
+                    engine.Play();
+                    Refresh();
+                    break;
+
+                case 11:
+                    EventLabel.Text = "You fly towards the frigate and see a few more ships warp into the system, clearly eager to trade";
+                    blueLabel.Text = "Hail the frigate";
+                    redLabel.Text = "Dont hail the frigate";
+                    engine.Play();
+                    Refresh();
+                    break;
+
+                case 12:
+                    redButton.Hide();
+                    redLabel.Hide();
+                    EventLabel.Text = "you flip the switch  to open your comms but before you say anything, the new arrivals once again catch  your eye";
+                    blueLabel.Text = "Continue";
+                    beep.Play();
+                    Refresh();
+                    break;
+
+                case 13:
+                    EventLabel.Text = "The ships are black and shimmering \n Now that they are so close, you can see they appear to be fighters";
+                    blueLabel.Text = "Continue";
+                    whiteNoise.Play();
+                    Refresh();
+                    break;
+                case 13.1:
+                    EventLabel.Text = "Flying in tight formation, the ships don't appear to be slowing as they approach the frigate \n  You see one fly ahead slightly and it disappears behind the bridge of the frigate";
+                    blueLabel.Text = "Continue";
+                    whiteNoise.Play();
+                    Refresh();
+                    break;
+                case 13.2:
+                    EventLabel.Text = "Suddenly the bridge errupts in a massive explosion, oxygen ripping out from the gaping hole left where the bridge was only moments ago";
+                    blueLabel.Text = "Continue";
+                    explosion.Play();
+                    Refresh();
+                    break;
+                case 13.3:
+                    EventLabel.Text = "Your ship is caught in the explosion and you perish";
+                    blueLabel.Text = "Continue";
+                    death.Play();
+                    Refresh();
+                    break;
+                case 13.4:
+                    redButton.Show();
+                    redLabel.Show();
+                    EventLabel.Text = "You are thrown away from the frigate by the force of the blast and see the black ships soar through the debris, counting four in total";
+                    blueLabel.Text = "Pursue the ships";
+                    redLabel.Text = "Don't pursue the ships";
+                    engine.Play();
+                    Refresh();
+                    break;
+
+                case 14:
+                    yellowButton.Show();
+                    yellowLabel.Show();
+                    EventLabel.Text = "You slowly begin your approach on the ships, they've slowed their flight and are beginning to group up";
+                    blueLabel.Text = "Continue your approach";
+                    redLabel.Text = "Fire upon the ships";
+                    yellowLabel.Text = "Hail the ships";
+                    engine.Play();
+                    Refresh();
+                    break;
+
+                case 15:
+                    yellowButton.Hide();
+                    yellowLabel.Hide();
+                    redLabel.Hide();
+                    redButton.Hide();
+                    EventLabel.Text = "You open all common channels and ask the ships if they got out of the explosion OK \n They do not respond, instead spinning their ship around and firing on you";
+                    blueLabel.Text = "Continue";
+                    beep.Play();
+                    Refresh();
+                    break;
+
+                case 16:
+                    redLabel.Hide();
+                    redButton.Hide();
+                    EventLabel.Text = "You lock on and fire, but before the plasma bolt reaches the group of ships, they break into evasive maneuvers \n Your bolt flies straight through the pack and the ships whip around to face you  ";
+                    blueLabel.Text = "Continue";
+                    shipFiring.Play();
+                    Refresh();
+                    break;
+                case 16.1:
+                    EventLabel.Text = "They don't hesitate to fire, ripping your craft to shreds in an instant";
+                    blueLabel.Text = "Continue";
+                    explosion.Play();
+                    Refresh();
+                    break;
+
+                case 17:
+                    EventLabel.Text = "Slowly, you continue your flight towards the now near stationary group of ships";
+                    blueLabel.Text = "Fire";
+                    redLabel.Text = "Hail";
+                    whiteNoise.Play();
+                    Refresh();
+                    break;
+
+                case 18:
+                    redLabel.Hide();
+                    redButton.Hide();
+                    EventLabel.Text = "You are close enough to the group now that there is no need to lock on \n You fire on the group, hitting on ship, destroying it instantly";
+                    blueLabel.Text = "Continue";
+                    shipFiring.Play();
+                    Refresh();
+                    break;
+                case 18.1:
+                    EventLabel.Text = "The explosion of the ship's boost drive rips across your vision, engulfing the ship beside it, ripping it's wing straight off, disabling the ship";
+                    blueLabel.Text = "Continue";
+                    explosion.Play();
+                    Refresh();
+                    break;
+                case 18.2:
+                    redButton.Show();
+                    redLabel.Show();
+                    EventLabel.Text = "The two remaining ship whip around to face you and open fire";
+                    blueLabel.Text = "Return fire";
+                    redLabel.Text = "Flee";
+                    shipFiring.Play();
+                    Refresh();
+                    break;
+
+                case 19:
+                    redLabel.Hide();
+                    redButton.Hide();
+                    EventLabel.Text = "You select a recent destination from your console and warp out, seeing the remaining two ships close behind as you leave the system";
+                    blueLabel.Text = "Continue";
+                    warp.Play();
+                    Refresh();
+                    break;
+                case 19.1:
+                    EventLabel.Text = "You arrive to see a dead star looming in front of you \n You also see the black ships arrive behind you";
+                    blueLabel.Text = "Continue";
+                    whiteNoise.Play();
+                    Refresh();
+                    break;
+
+                case 20:
+                    redLabel.Hide();
+                    redButton.Hide();
+                    EventLabel.Text = "You fire off as much of your arsenal as you can in one burst, striking the ship on the left \n  The ship on the right still stands.";
+                    blueLabel.Text = "Continue";
+                    shipFiring.Play();
+                    Refresh();
+                    break;
+                case 20.1:
+                    EventLabel.Text = "The remaining ship pauses its assault to evade your shots, quickly resuming fire afterwards";
+                    blueLabel.Text = "Continue";
+                    engine.Play();
+                    Refresh();
+                    break;
+                case 20.2:
+                    EventLabel.Text = "The ship doesn't slow it's attack, overwhelming you and destroying your ship completely ";
+                    blueLabel.Text = "Continue";
+                    explosion.Play();
+                    Refresh();
+                    break;
+
+                case 21:
+                    redButton.Show();
+                    redLabel.Show();
+                    EventLabel.Text = "The two ship open fire on you, damaging your right engine, forcing you to head towards one of the near-by planets";
+                    blueLabel.Text = "Head left";
+                    redLabel.Text = "Head right";
+                    shipFiring.Play();
+                    Refresh();
+                    break;
+
+                case 22:
+                    redLabel.Hide();
+                    redButton.Hide();
+                    EventLabel.Text = "You hurtle towards a rocky planet, smashing into the surface with considerable force.";
+                    blueLabel.Text = "Continue";
+                    crash.Play();
+                    Refresh();
+                    break;
+                case 22.1:
+                    EventLabel.Text = "You are dashed on the rocks, but barely survive \n As you crawl from the burnt hull of your ship, you discover that your leg is broken.";
+                    blueLabel.Text = "Continue";
+                    step.Play();
+                    step.Play();
+                    Refresh();
+                    break;
+                case 22.2:
+                    EventLabel.Text = "The two ships land nearby, and out climb two figures clad in all black armor, they approach you";
+                    blueLabel.Text = "Continue";
+                    step.Play();
+                    step.Play();
+                    Refresh();
+                    break;
+                case 22.3:
+                    EventLabel.Text = "They observe your state silently, before walking off, leaving you to die";
+                    blueLabel.Text = "Continue";
+                    death.Play();
+                    Refresh();
+                    break;
+                case 22.4:
+                    EventLabel.Text = "As the figures draw near, one draws a sidearm, and fires";
+                    blueLabel.Text = "Continue";
+                    death.Play();
+                    Refresh();
+                    break;
+                case 22.5:
+                    EventLabel.Text = "As the figures near your location, one draws a knife, hurling it with considerable force into your chest, killing you";
+                    blueLabel.Text = "Continue";
+                    death.Play();
+                    Refresh();
+                    break;
+
+                case 23:
+                    EventLabel.Text = "You land hot on a planet draped in snow \n Exiting your ship, you see the two black ships landing a few hundred meters away ";
+                    blueLabel.Text = "Hide";
+                    redLabel.Text = "Approach the ships";
+                    crash.Play();
+                    Refresh();
+                    break;
+
+                case 24:
+                    redLabel.Hide();
+                    redButton.Hide();
+                    EventLabel.Text = "You climb from the wreckage of your ship, drawing your weapon and advancing towards the pair of sinister black ships";
+                    blueLabel.Text = "Continue";
+                    aim.Play();
+                    Refresh();
+                    break;
+                case 24.1:
+                    redButton.Show();
+                    redLabel.Show();
+                    EventLabel.Text = "A large figure covered in black armor resembling their ship rises from each of the two vessels, rifles in hand";
+                    blueLabel.Text = "Aim left";
+                    redLabel.Text = "Aim right";
+                    Refresh();
+                    break;
+
+                case 25:
+                    redLabel.Hide();
+                    redButton.Hide();
+                    EventLabel.Text = "You swing your weapon towards the right figure, firing as it stands \n The shot hits thick armor";
+                    blueLabel.Text = "Continue";
+                    shoot.Play();
+                    Refresh();
+                    break;
+                case 25.1:
+                    EventLabel.Text = "The figure stumbles, but doesn't fall \n The figure on the left has his weapon drawn at this point, it aims and fires.";
+                    blueLabel.Text = "Continue";
+                    shoot.Play();
+                    Refresh();
+                    break;
+
+                case 26:
+                    redLabel.Hide();
+                    redButton.Hide();
+                    EventLabel.Text = "You aim and fire at the left figure, you shot glancing off of one of the plates covering the figure's abdomen";
+                    blueLabel.Text = "Continue";
+                    shoot.Play();
+                    Refresh();
+                    break;
+                case 26.1:
+                    redButton.Show();
+                    redLabel.Show();
+                    yellowLabel.Show();
+                    yellowButton.Show();
+                    greenButton.Show();
+                    greenLabel.Show();
+                    EventLabel.Text = "The figure recoils slightly at the impact but remains unharmed \n The figure on the right begins to climb down from his ship, you realize you need a new strategy";
+                    blueLabel.Text = "Kick up a cloud of snow";
+                    redLabel.Text = "Take cover";
+                    yellowLabel.Text = "Fire again";
+                    greenLabel.Text = "Charge towards the enemies";
+                    impact.Play();
+                    Refresh();
+                    break;
+
+                case 27:
+                    redLabel.Hide();
+                    redButton.Hide();
+                    EventLabel.Text = "You quickly duck behind the wreckage of your ship and bury yourself in the snow";
+                    blueLabel.Text = "Continue";
+                    step.Play();
+                    Refresh();
+                    break;
+                case 27.1:
+                    EventLabel.Text = "A long time passes where you can hear two entities searching the area \n You feel very cold, but don't dare reveal yourself, they don't seem to be leaving anytime soon.";
+                    blueLabel.Text = "Continue";
+                    step.Play();
+                    step.Play();
+                    Refresh();
+                    break;
+                case 27.2:
+                    EventLabel.Text = "You stay still for what feels like eternity before you finally hear the two figures walking off and their ships leaving";
+                    blueLabel.Text = "Continue";
+                    step.Play();
+                    step.Play();
+                    Refresh();
+                    break;
+                case 27.3:
+                    EventLabel.Text = "You find yourself unable to move, and suddenly realize that you cannot feel any of your extremities \n You die of hypothermia";
+                    blueLabel.Text = "Continue";
+                    death.Play();
+                    Refresh();
+                    break;
+                case 27.4:
+                    EventLabel.Text = "You stand up and shake off the snow, spying a trade post in the distance \n You begin your trek towards it, free of the mysterious ships that have caused your current situation.";
+                    blueLabel.Text = "Continue";
+                    ingameWin.Play();
+                    Refresh();
+                    break;
+
+                case 28:
+                    redButton.Hide();
+                    redLabel.Hide();
+                    yellowLabel.Hide();
+                    yellowButton.Hide();
+                    greenButton.Hide();
+                    greenLabel.Hide();
+                    EventLabel.Text = "You launch yourself towards the enemy descending the ladder on the right \n Just before you reach him, you spy the figure on the left recovering";
+                    blueLabel.Text = "Continue";
+                    step.Play();
+                    step.Play();
+                    step.Play();
+                    step.Play();
+                    Refresh();
+                    break;
+                case 28.1:
+                    EventLabel.Text = "The figure stands tall once more, aiming its rifle straight at your head, a red laser burning into your retinas \n It fires.";
+                    blueLabel.Text = "Continue";
+                    shoot.Play();
+                    Refresh();
+                    break;
+
+                case 29:
+                    greenButton.Hide();
+                    greenLabel.Hide();
+                    EventLabel.Text = "You swing your leg in a wide arc around your base, sending a thick mist of white snow shooting off ten feet from you";
+                    blueLabel.Text = "Kick more snow";
+                    redLabel.Text = "Take cover";
+                    yellowLabel.Text = "Chrage";
+                    kick.Play();
+                    Refresh();
+                    break;
+
+                case 30:
+                    redButton.Hide();
+                    redLabel.Hide();
+                    yellowLabel.Hide();
+                    yellowButton.Hide();
+                    EventLabel.Text = "You use the white smog to sneak behind a nearby rock and lie in wait \n The smoke begins to clear and you line up a clear shot on the right side enemy";
+                    blueLabel.Text = "Continue";
+                    step.Play();
+                    step.Play();
+                    step.Play();
+                    step.Play();
+                    Refresh();
+                    break;
+
+                case 31:
+                    redButton.Hide();
+                    redLabel.Hide();
+                    yellowLabel.Hide();
+                    yellowButton.Hide();
+                    EventLabel.Text = "You pierce through the cloud of white haze you've created and catch the enemy on the right by surprise \n throwing it to the ground, you stick your gun between its armor plates, pulling the trigger, killing it ";
+                    blueLabel.Text = "Continue";
+                    shoot.Play();
+                    Refresh();
+                    break;
+
+                case 32:
+                    EventLabel.Text = "You repeat your last action, prolonging the mist hanginging around you";
+                    blueLabel.Text = "Kick more snow";
+                    redLabel.Text = "Take cover";
+                    yellowLabel.Text = "Chrage";
+                    kick.Play();
+                    Refresh();
+                    break;
+
+                case 33:
+                    EventLabel.Text = "You repeat your last action, prolonging the mist hanginging around you";
+                    blueLabel.Text = "Kick more snow";
+                    redLabel.Text = "Take cover";
+                    yellowLabel.Text = "Chrage";
+                    kick.Play();
+                    Refresh();
+                    break;
+
+                case 34:
+                    EventLabel.Text = "You repeat your last action, prolonging the mist hanginging around you";
+                    blueLabel.Text = "Kick more snow";
+                    redLabel.Text = "Take cover";
+                    yellowLabel.Text = "Chrage";
+                    kick.Play();
+                    Refresh();
+                    break;
+
+                case 35:
+                    redButton.Hide();
+                    redLabel.Hide();
+                    yellowLabel.Hide();
+                    yellowButton.Hide();
+                    EventLabel.Text = "There is no more snow for you to kick, your foot sweeps through air \n  The mist settles, revealing...  A snowman!  ";
+                    blueLabel.Text = "Continue";
+                    snowman.Play();
+                    Refresh();
+                    break;
+                case 35.1:
+                    EventLabel.Text = "Your kicks had such precision to them that they managed to create a crude, but recognizable snowman!";
+                    blueLabel.Text = "Continue";
+                    Refresh();
+                    break;
+                case 35.2:
+                    EventLabel.Text = "Slightly stunned, your armor-clad adversaries stride towards your creation, marveling \n They examine it, giving a nod of approval";
+                    blueLabel.Text = "Continue";
+                    Refresh();
+                    break;
+                case 35.3:
+                    EventLabel.Text = "They walk back to their ships, satisfied with what they've seen, leaving you sitting in stunned silence for a moment";
+                    blueLabel.Text = "Continue";
+                    Refresh();
+                    break;
+
+                case 36:
+                    redButton.Hide();
+                    redLabel.Hide();
+                    yellowLabel.Hide();
+                    yellowButton.Hide();
+                    greenButton.Hide();
+                    greenLabel.Hide();
+                    EventLabel.Text = "You sprint towards the nearest boulder, but are caught out by the left enemy, recovered from the shot they took \n Their bullets rip through you, killing you instantly";
+                    blueLabel.Text = "Continue";
+                    shoot.Play();
+                    Refresh();
+                    break;
+
+                case 37:
+                    redButton.Hide();
+                    redLabel.Hide();
+                    yellowLabel.Hide();
+                    yellowButton.Hide();
+                    greenButton.Hide();
+                    greenLabel.Hide();
+                    EventLabel.Text = "You fire another shot at the staggered enemy on the left, knocking them over and off their ship \n You turn your attention towards the right side enemy";
+                    blueLabel.Text = "Continue";
+                    shoot.Play();
+                    Refresh();
+                    break;
+                case 37.1:
+                    EventLabel.Text = "It reaches the bottom of the ladder from its ship and reaches up to draw its weapon from its back, exposing its un-armored underarm";
+                    blueLabel.Text = "Continue";
+                    aim.Play();
+                    Refresh();
+                    break;
+                case 37.2:
+                    EventLabel.Text = "You miss slightly, the shot hitting the cold metal of the ship behind the figure, who finishes drawing its weapon, shooting to kill";
+                    blueLabel.Text = "Continue";
+                    shoot.Play();
+                    Refresh();
+                    break;
+                case 37.3:
+                    EventLabel.Text = "You score a hit, sending the figure reeling, blood dripping from the wound, you quickly sprint over finishing the job";
+                    blueLabel.Text = "Continue";
+                    impact.Play();
+                    Refresh();
+                    break;
+                case 37.4:
+                    redButton.Show();
+                    redLabel.Show();
+                    EventLabel.Text = "There is now only one enemy left, you spin around to face it, standing, seething at the foot of its ship's landing gear \n A scuff is visible on its right abdominal plate";
+                    blueLabel.Text = "Pick up the fallen enemy's rifle";
+                    redLabel.Text = "Keep your handgun";
+                    step.Play();
+                    Refresh();
+                    break;
+
+                case 38:
+                    redButton.Hide();
+                    redLabel.Hide();
+                    EventLabel.Text = "You carefully check your weapon's battery \n Seeing it has seven shots left, you raise your weapon and fire three shots quickly";
+                    blueLabel.Text = "Continue";
+                    aim.Play();
+                    Refresh();
+                    break;
+                case 38.1:
+                    EventLabel.Text = "The shots ring out, striking the chest of the figure, sending it back into the leg of the landing gear";
+                    blueLabel.Text = "Continue";
+                    impact.Play();
+                    Refresh();
+                    break;
+                case 38.2:
+                    EventLabel.Text = "Suddenly, the ship begins to rise, and you see that the figure has a glowing panel on its arm, controlling the ship remotely \n Grasping the leg of the landing gear, the figure rises into the air, drawing its weapon";
+                    blueLabel.Text = "Continue";
+                    engine.Play();
+                    Refresh();
+                    break;
+                case 38.3:
+                    EventLabel.Text = "It lets loose 7 shots, and you throw yourself to the ground, narrowly avoiding the being hit \n You get back up and face the ship, which is now circling the area";
+                    blueLabel.Text = "Continue";
+                    shipFiring.Play();
+                    Refresh();
+                    break;
+                case 38.4:
+                    EventLabel.Text = "The ship turns to face you, the main forward guns spark up, eviscerating you in an instant";
+                    blueLabel.Text = "Continue";
+                    death.Play();
+                    Refresh();
+                    break;
+                case 38.5:
+                    EventLabel.Text = "The figure activates the ship's side cannons, but you are prepared and dodge behind a rock, the blasts erupting around you \n You duck back out from behind your cover for only a second";
+                    blueLabel.Text = "Continue";
+                    step.Play();
+                    step.Play();
+                    step.Play();
+                    step.Play();
+                    Refresh();
+                    break;
+                case 38.6:
+                    EventLabel.Text = "You raise you gun at the ship and fire two of your last 4 shot, scoring a hit on an exposed area of the engine \n The figure drops from the smoking ship, landing with a crunch in the fresh snow.";
+                    blueLabel.Text = "Continue";
+                    shoot.Play();
+                    Refresh();
+                    break;
+                case 38.7:
+                    redButton.Show();
+                    redLabel.Show();
+                    EventLabel.Text = "The ship begins an uncontrollable spin, sending in into a line of dead trees a few hundred meters away, spewing fire a skyscraper's height into the sky";
+                    blueLabel.Text = "Attack";
+                    redLabel.Text = "Make for cover";
+                    explosion.Play();
+                    Refresh();
+                    break;
+
+                case 39:
+                    redButton.Hide();
+                    redLabel.Hide();
+                    EventLabel.Text = "You reach down to pick up the fallen figure's rifle, keeping eyes on the enraged figure the whole while";
+                    blueLabel.Text = "Continue";
+                    aim.Play();
+                    Refresh();
+                    break;
+                case 39.1:
+                    EventLabel.Text = "You suddenly feel a sharp pain in your neck, no weapon has been draw on your foe's side, you look down slowly.";
+                    blueLabel.Text = "Continue";
+                    death.Play();
+                    Refresh();
+                    break;
+                case 39.2:
+                    EventLabel.Text = "With its last breath, the enemy you thought was finished stabbed you through the base of your neck with a large combat knife \n You fall to the ground shaking and bleed out";
+                    blueLabel.Text = "Continue";
+                    death.Play();
+                    Refresh();
+                    break;
+
+                case 40:
+                    redButton.Hide();
+                    redLabel.Hide();
+                    EventLabel.Text = "You wait for the figure to rise to its full height, exposing a chip in a plate right at the base of its neck";
+                    blueLabel.Text = "Continue";
+                    step.Play();
+                    Refresh();
+                    break;
+                case 40.1:
+                    EventLabel.Text = "You shoot just once and aim to kill";
+                    blueLabel.Text = "Continue";
+                    shoot.Play();
+                    Refresh();
+                    break;
+                case 40.2:
+                    EventLabel.Text = "You hit the figure right in the weak link in its armor \n It crumples to the floor, motionless";
+                    blueLabel.Text = "Continue";
+                    impact.Play();
+                    Refresh();
+                    break;
+                case 40.3:
+                    EventLabel.Text = "It is finally over, you look around at the chaos surrounding you \n You turn back to the only ship left standing and climb in, now free to continue your voyage across the cosmos unheeded \n For now.";
+                    blueLabel.Text = "Continue";
+                    ingameWin.Play();
+                    Refresh();
+                    break;
+
+                case 41:
+                    EventLabel.Text = "You duck behind a rock just as a shot whizzes past you ear \n You wait only a moment before thrusting your gun out ahead of the rest of your body.";
+                    blueLabel.Text = "Continue";
+                    impact.Play();
+                    Refresh();
+                    break;
+                case 41.1:
+                    EventLabel.Text = "You catch the figure reloading and notice a crack in a panel just below the figure's neck";
+                    blueLabel.Text = "Continue";
+                    aim.Play();
+                    Refresh();
+                    break;
+
+                case 97:
+                    redButton.Show();
+                    redLabel.Show();
+                    EventLabel.Text = "You fly off without looking back, off into the blackness of space \n \n  Congratulations on surviving!";
+                    blueLabel.Text = "Play again";
+                    redLabel.Text = "Exit game";
+                    winScreen.Play();
+                    Refresh();
+                    break;
+
+                case 98:
+                    redButton.Show();
+                    redLabel.Show();
+                    EventLabel.Text = "You continue on your way, hoping to put this day's events behind you";
+                    blueLabel.Text = "Play again";
+                    redLabel.Text = "Exit game";
+                    winScreen.Play();
+                    Refresh();
+                    break;
+
+                case 99:
+                    redButton.Show();
+                    redLabel.Show();
+                    EventLabel.Text = "You have died.";
+                    blueLabel.Text = "Play again";
+                    redLabel.Text = "Exit game";
+                    deathScreen.Play();
+                    Refresh();
+                    break;
+
+            }
         }
     }
 }
