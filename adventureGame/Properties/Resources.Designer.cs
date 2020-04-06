@@ -61,12 +61,30 @@ namespace adventureGame.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream beep_07 {
+            get {
+                return ResourceManager.GetStream("beep_07", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap blue_50x50 {
             get {
                 object obj = ResourceManager.GetObject("blue_50x50", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Cowboy_with_spurs_G_rant_1371954508 {
+            get {
+                return ResourceManager.GetStream("Cowboy_with_spurs_G_rant_1371954508", resourceCulture);
             }
         }
         
@@ -81,12 +99,66 @@ namespace adventureGame.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Gun_Cocking_Fast_Mike_Koenig_465593588 {
+            get {
+                return ResourceManager.GetStream("Gun_Cocking_Fast_Mike_Koenig_465593588", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Harpoon_SoundBible_com_673032123 {
+            get {
+                return ResourceManager.GetStream("Harpoon_SoundBible_com_673032123", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Phone_Off_Hook_SoundBible_com_701991146 {
+            get {
+                return ResourceManager.GetStream("Phone_Off_Hook_SoundBible_com_701991146", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap red_50x50 {
             get {
                 object obj = ResourceManager.GetObject("red_50x50", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Rocket_Thrusters_SoundBible_com_1432176431 {
+            get {
+                return ResourceManager.GetStream("Rocket_Thrusters_SoundBible_com_1432176431", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream soundscrate_ebow_logo_sc1 {
+            get {
+                return ResourceManager.GetStream("soundscrate_ebow_logo_sc1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream soundscrate_slowmotion_sweep_sc1 {
+            get {
+                return ResourceManager.GetStream("soundscrate_slowmotion_sweep_sc1", resourceCulture);
             }
         }
         

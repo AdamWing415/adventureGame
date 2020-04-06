@@ -104,5 +104,29 @@
   <ItemGroup>
     <None Include="Resources\blue_50x50.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\soundscrate-slowmotion-sweep-sc1.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\soundscrate-ebow-logo-sc1.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Phone Off Hook-SoundBible.com-701991146.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cowboy_with_spurs-G-rant-1371954508.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Harpoon-SoundBible.com-673032123.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gun_Cocking_Fast-Mike_Koenig-465593588.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\beep-07.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rocket Thrusters-SoundBible.com-1432176431.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

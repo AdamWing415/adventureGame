@@ -31,59 +31,68 @@
             this.blueLabel = new System.Windows.Forms.Label();
             this.redLabel = new System.Windows.Forms.Label();
             this.yellowLabel = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.greenLabel = new System.Windows.Forms.Label();
             this.greenButton = new System.Windows.Forms.PictureBox();
             this.blueButton = new System.Windows.Forms.PictureBox();
             this.yellowButton = new System.Windows.Forms.PictureBox();
             this.redButton = new System.Windows.Forms.PictureBox();
             this.EventLabel = new System.Windows.Forms.Label();
             this.ScenePictureBox = new System.Windows.Forms.PictureBox();
+            this.pauseBack = new System.Windows.Forms.Label();
+            this.pauseRed = new System.Windows.Forms.PictureBox();
+            this.pauseBlue = new System.Windows.Forms.PictureBox();
+            this.resumeLabel = new System.Windows.Forms.Label();
+            this.exitLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.greenButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.blueButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.yellowButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.redButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ScenePictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pauseRed)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pauseBlue)).BeginInit();
             this.SuspendLayout();
             // 
             // blueLabel
             // 
             this.blueLabel.BackColor = System.Drawing.SystemColors.ControlText;
+            this.blueLabel.Font = new System.Drawing.Font("Lucida Console", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.blueLabel.ForeColor = System.Drawing.Color.AliceBlue;
             this.blueLabel.Location = new System.Drawing.Point(101, 580);
             this.blueLabel.Name = "blueLabel";
             this.blueLabel.Size = new System.Drawing.Size(305, 67);
             this.blueLabel.TabIndex = 4;
-            this.blueLabel.Text = "label1";
             // 
             // redLabel
             // 
             this.redLabel.BackColor = System.Drawing.SystemColors.ControlText;
+            this.redLabel.Font = new System.Drawing.Font("Lucida Console", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.redLabel.ForeColor = System.Drawing.Color.AliceBlue;
             this.redLabel.Location = new System.Drawing.Point(101, 665);
             this.redLabel.Name = "redLabel";
             this.redLabel.Size = new System.Drawing.Size(305, 67);
             this.redLabel.TabIndex = 5;
-            this.redLabel.Text = "label2";
             // 
             // yellowLabel
             // 
             this.yellowLabel.BackColor = System.Drawing.SystemColors.ControlText;
+            this.yellowLabel.Font = new System.Drawing.Font("Lucida Console", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.yellowLabel.ForeColor = System.Drawing.Color.AliceBlue;
             this.yellowLabel.Location = new System.Drawing.Point(511, 580);
             this.yellowLabel.Name = "yellowLabel";
             this.yellowLabel.Size = new System.Drawing.Size(305, 67);
             this.yellowLabel.TabIndex = 6;
-            this.yellowLabel.Text = "label3";
+            this.yellowLabel.Visible = false;
             // 
-            // label4
+            // greenLabel
             // 
-            this.label4.BackColor = System.Drawing.SystemColors.ControlText;
-            this.label4.ForeColor = System.Drawing.Color.AliceBlue;
-            this.label4.Location = new System.Drawing.Point(511, 665);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(305, 67);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "label4";
+            this.greenLabel.BackColor = System.Drawing.SystemColors.ControlText;
+            this.greenLabel.Font = new System.Drawing.Font("Lucida Console", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.greenLabel.ForeColor = System.Drawing.Color.AliceBlue;
+            this.greenLabel.Location = new System.Drawing.Point(511, 665);
+            this.greenLabel.Name = "greenLabel";
+            this.greenLabel.Size = new System.Drawing.Size(305, 67);
+            this.greenLabel.TabIndex = 7;
+            this.greenLabel.Visible = false;
             // 
             // greenButton
             // 
@@ -94,6 +103,7 @@
             this.greenButton.Size = new System.Drawing.Size(70, 67);
             this.greenButton.TabIndex = 3;
             this.greenButton.TabStop = false;
+            this.greenButton.Visible = false;
             // 
             // blueButton
             // 
@@ -114,6 +124,7 @@
             this.yellowButton.Size = new System.Drawing.Size(70, 67);
             this.yellowButton.TabIndex = 1;
             this.yellowButton.TabStop = false;
+            this.yellowButton.Visible = false;
             // 
             // redButton
             // 
@@ -128,12 +139,13 @@
             // EventLabel
             // 
             this.EventLabel.BackColor = System.Drawing.SystemColors.ControlText;
+            this.EventLabel.Font = new System.Drawing.Font("Lucida Console", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EventLabel.ForeColor = System.Drawing.Color.AliceBlue;
             this.EventLabel.Location = new System.Drawing.Point(12, 14);
             this.EventLabel.Name = "EventLabel";
             this.EventLabel.Size = new System.Drawing.Size(872, 67);
             this.EventLabel.TabIndex = 8;
-            this.EventLabel.Text = "label1";
+            this.EventLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ScenePictureBox
             // 
@@ -145,14 +157,83 @@
             this.ScenePictureBox.TabIndex = 9;
             this.ScenePictureBox.TabStop = false;
             // 
+            // pauseBack
+            // 
+            this.pauseBack.BackColor = System.Drawing.Color.MidnightBlue;
+            this.pauseBack.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pauseBack.Font = new System.Drawing.Font("Malgun Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pauseBack.ForeColor = System.Drawing.Color.Azure;
+            this.pauseBack.Location = new System.Drawing.Point(231, 211);
+            this.pauseBack.Name = "pauseBack";
+            this.pauseBack.Size = new System.Drawing.Size(407, 225);
+            this.pauseBack.TabIndex = 10;
+            this.pauseBack.Text = "PAUSED";
+            this.pauseBack.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.pauseBack.Visible = false;
+            // 
+            // pauseRed
+            // 
+            this.pauseRed.BackColor = System.Drawing.Color.MidnightBlue;
+            this.pauseRed.BackgroundImage = global::adventureGame.Properties.Resources.red_50x50;
+            this.pauseRed.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pauseRed.Location = new System.Drawing.Point(245, 350);
+            this.pauseRed.Name = "pauseRed";
+            this.pauseRed.Size = new System.Drawing.Size(70, 67);
+            this.pauseRed.TabIndex = 11;
+            this.pauseRed.TabStop = false;
+            this.pauseRed.Visible = false;
+            // 
+            // pauseBlue
+            // 
+            this.pauseBlue.BackColor = System.Drawing.Color.MidnightBlue;
+            this.pauseBlue.BackgroundImage = global::adventureGame.Properties.Resources.blue_50x50;
+            this.pauseBlue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pauseBlue.Location = new System.Drawing.Point(245, 277);
+            this.pauseBlue.Name = "pauseBlue";
+            this.pauseBlue.Size = new System.Drawing.Size(70, 67);
+            this.pauseBlue.TabIndex = 12;
+            this.pauseBlue.TabStop = false;
+            this.pauseBlue.Visible = false;
+            // 
+            // resumeLabel
+            // 
+            this.resumeLabel.BackColor = System.Drawing.Color.MidnightBlue;
+            this.resumeLabel.Font = new System.Drawing.Font("Malgun Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resumeLabel.ForeColor = System.Drawing.Color.Azure;
+            this.resumeLabel.Location = new System.Drawing.Point(321, 277);
+            this.resumeLabel.Name = "resumeLabel";
+            this.resumeLabel.Size = new System.Drawing.Size(178, 55);
+            this.resumeLabel.TabIndex = 13;
+            this.resumeLabel.Text = "RESUME";
+            this.resumeLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.resumeLabel.Visible = false;
+            // 
+            // exitLabel
+            // 
+            this.exitLabel.BackColor = System.Drawing.Color.MidnightBlue;
+            this.exitLabel.Font = new System.Drawing.Font("Malgun Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exitLabel.ForeColor = System.Drawing.Color.Azure;
+            this.exitLabel.Location = new System.Drawing.Point(333, 350);
+            this.exitLabel.Name = "exitLabel";
+            this.exitLabel.Size = new System.Drawing.Size(178, 55);
+            this.exitLabel.TabIndex = 14;
+            this.exitLabel.Text = "EXIT GAME";
+            this.exitLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.exitLabel.Visible = false;
+            // 
             // gameScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlText;
+            this.Controls.Add(this.exitLabel);
+            this.Controls.Add(this.resumeLabel);
+            this.Controls.Add(this.pauseBlue);
+            this.Controls.Add(this.pauseRed);
+            this.Controls.Add(this.pauseBack);
             this.Controls.Add(this.ScenePictureBox);
             this.Controls.Add(this.EventLabel);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.greenLabel);
             this.Controls.Add(this.yellowLabel);
             this.Controls.Add(this.redLabel);
             this.Controls.Add(this.blueLabel);
@@ -170,6 +251,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.yellowButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.redButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ScenePictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pauseRed)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pauseBlue)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -183,8 +266,13 @@
         private System.Windows.Forms.Label blueLabel;
         private System.Windows.Forms.Label redLabel;
         private System.Windows.Forms.Label yellowLabel;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label greenLabel;
         private System.Windows.Forms.Label EventLabel;
         private System.Windows.Forms.PictureBox ScenePictureBox;
+        private System.Windows.Forms.Label pauseBack;
+        private System.Windows.Forms.PictureBox pauseRed;
+        private System.Windows.Forms.PictureBox pauseBlue;
+        private System.Windows.Forms.Label resumeLabel;
+        private System.Windows.Forms.Label exitLabel;
     }
 }
