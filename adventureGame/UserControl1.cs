@@ -28,6 +28,7 @@ namespace adventureGame
 
         private void gameScreen_Load(object sender, EventArgs e)
         {
+            ScenePictureBox.Image = Properties.Resources._3planets_enter;
             EventLabel.Text = "You enter a new star system";
             redLabel.Text = "Stop here";
             blueLabel.Text = "Continue onward";
@@ -348,6 +349,7 @@ namespace adventureGame
             switch (scene)
             {
                 case 1:
+                    ScenePictureBox.Image = Properties.Resources._3planets_enter;
                     EventLabel.Text = "You enter a new star system";
                     redLabel.Text = "Stop here";
                     blueLabel.Text = "Continue onward";
@@ -356,6 +358,7 @@ namespace adventureGame
                     break;
 
                 case 2:
+                    ScenePictureBox.Image = Properties.Resources._3planets_enter;
                     EventLabel.Text = "You pass three small planets and continue towards the blackness of empty space";
                     redLabel.Text = "Don't jump to next system";
                     blueLabel.Text = "Jump to next system";
@@ -364,6 +367,7 @@ namespace adventureGame
                     break;
 
                 case 3:
+                    ScenePictureBox.Image = Properties.Resources._3planets;
                     EventLabel.Text = "You look around and see 3 planets in close orbit to each other around a small star";
                     redLabel.Text = "Move closer";
                     blueLabel.Text = "Continue onward";
@@ -372,6 +376,7 @@ namespace adventureGame
                     break;
 
                 case 4:
+                    ScenePictureBox.Image = Properties.Resources.warp1;
                     EventLabel.Text = "You warp out of the system";
                     blueLabel.Text = "Continue";
                     redButton.Hide();
@@ -381,6 +386,7 @@ namespace adventureGame
                     break;
 
                 case 5:
+                    ScenePictureBox.Image = Properties.Resources.gravity_pull;
                     EventLabel.Text = "The gravity of the planets proves to great for your ship's engines \n You can feel yourself getting pulled in";
                     blueLabel.Text = "Continue";
                     redButton.Hide();
@@ -389,18 +395,21 @@ namespace adventureGame
                     Refresh();
                     break;
                 case 5.1:
+                    ScenePictureBox.Image = Properties.Resources.explosionPic;
                     EventLabel.Text = "Your ship 's engines fail and you plummet to your death on the planets below";
                     blueLabel.Text = "Continue";
                     explosion.Play();
                     Refresh();
                     break;
                 case 5.2:
+                    ScenePictureBox.Image = Properties.Resources.warp2;
                     EventLabel.Text = "You steady your throttle and slip ot of the gravitation pull of the planets safely";
                     blueLabel.Text = "Continue";
                     engine.Play();
                     Refresh();
                     break;
                 case 5.3:
+                    ScenePictureBox.Image = Properties.Resources.explosionPic;
                     EventLabel.Text = "Your ship 's engines fail and you plummet to your death on the planets below";
                     blueLabel.Text = "Continue";
                     explosion.Play();
@@ -408,6 +417,7 @@ namespace adventureGame
                     break;
 
                 case 6:
+                    ScenePictureBox.Image = Properties.Resources.nebula;
                     EventLabel.Text = "You end your jump to find yourself facing the edge of a great nebula";
                     blueLabel.Text = "Continue";
                     warp.Play();
@@ -423,6 +433,7 @@ namespace adventureGame
                     break;
 
                 case 7:
+                    ScenePictureBox.Image = Properties.Resources.deadstar_Warp;
                     redButton.Show();
                     redLabel.Show();
                     EventLabel.Text = "You arrive in a new system to see a dying star and a few trade vessels still orbiting around some of the dead worlds";
@@ -433,6 +444,7 @@ namespace adventureGame
                     break;
 
                 case 8:
+                    ScenePictureBox.Image = Properties.Resources.deadstar_Warp_plus_ships;
                     redButton.Hide();
                     redLabel.Hide();
                     EventLabel.Text = "The dead star looms in front of you, and you see two slick, black ships warp into the system behind you";
@@ -451,6 +463,7 @@ namespace adventureGame
                     break;
 
                 case 9:
+                    ScenePictureBox.Image = Properties.Resources.warp_trade;
                     redButton.Show();
                     redLabel.Show();
                     EventLabel.Text = "You warp to a new star system and see a trade frigate ahead";
@@ -461,6 +474,7 @@ namespace adventureGame
                     break;
 
                 case 10:
+                    ScenePictureBox.Image = Properties.Resources.warp_trade_plus_ships;
                     redButton.Hide();
                     redLabel.Hide();
                     EventLabel.Text = "As you prepare to move on, you see a few more ships enter the system, catching your eye";
@@ -476,6 +490,7 @@ namespace adventureGame
                     break;
 
                 case 11:
+                    ScenePictureBox.Image = Properties.Resources.evil_enter;
                     EventLabel.Text = "You fly towards the frigate and see a few more ships warp into the system, clearly eager to trade";
                     blueLabel.Text = "Hail the frigate";
                     redLabel.Text = "Dont hail the frigate";
@@ -484,6 +499,7 @@ namespace adventureGame
                     break;
 
                 case 12:
+                    ScenePictureBox.Image = Properties.Resources.warp_trade_plus_ships;
                     redButton.Hide();
                     redLabel.Hide();
                     EventLabel.Text = "you flip the switch  to open your comms but before you say anything, the new arrivals once again catch  your eye";
@@ -493,6 +509,7 @@ namespace adventureGame
                     break;
 
                 case 13:
+                    ScenePictureBox.Image = Properties.Resources.evil_closeup;
                     EventLabel.Text = "The ships are black and shimmering \n Now that they are so close, you can see they appear to be fighters";
                     blueLabel.Text = "Continue";
                     whiteNoise.Play();
@@ -505,18 +522,21 @@ namespace adventureGame
                     Refresh();
                     break;
                 case 13.2:
+                    ScenePictureBox.Image = Properties.Resources.bridge_closeup;
                     EventLabel.Text = "Suddenly the bridge errupts in a massive explosion, oxygen ripping out from the gaping hole left where the bridge was only moments ago";
                     blueLabel.Text = "Continue";
                     explosion.Play();
                     Refresh();
                     break;
                 case 13.3:
+                    ScenePictureBox.Image = Properties.Resources.explosionPic;
                     EventLabel.Text = "Your ship is caught in the explosion and you perish";
                     blueLabel.Text = "Continue";
                     death.Play();
                     Refresh();
                     break;
                 case 13.4:
+                    ScenePictureBox.Image = Properties.Resources.bridge_closeup;
                     redButton.Show();
                     redLabel.Show();
                     EventLabel.Text = "You are thrown away from the frigate by the force of the blast and see the black ships soar through the debris, counting four in total";
@@ -527,6 +547,7 @@ namespace adventureGame
                     break;
 
                 case 14:
+                    ScenePictureBox.Image = Properties.Resources.evil_closeup;
                     yellowButton.Show();
                     yellowLabel.Show();
                     EventLabel.Text = "You slowly begin your approach on the ships, they've slowed their flight and are beginning to group up";
@@ -538,6 +559,7 @@ namespace adventureGame
                     break;
 
                 case 15:
+                    ScenePictureBox.Image = Properties.Resources.explosionPic;
                     yellowButton.Hide();
                     yellowLabel.Hide();
                     redLabel.Hide();
@@ -549,6 +571,7 @@ namespace adventureGame
                     break;
 
                 case 16:
+                    ScenePictureBox.Image = Properties.Resources.evil_firing;
                     redLabel.Hide();
                     redButton.Hide();
                     EventLabel.Text = "You lock on and fire, but before the plasma bolt reaches the group of ships, they break into evasive maneuvers \n Your bolt flies straight through the pack and the ships whip around to face you  ";
@@ -564,6 +587,7 @@ namespace adventureGame
                     break;
 
                 case 17:
+                    ScenePictureBox.Image = Properties.Resources.approach_in_ship;
                     EventLabel.Text = "Slowly, you continue your flight towards the now near stationary group of ships";
                     blueLabel.Text = "Fire";
                     redLabel.Text = "Hail";
@@ -572,6 +596,7 @@ namespace adventureGame
                     break;
 
                 case 18:
+                    ScenePictureBox.Image = Properties.Resources.evil_explode;
                     redLabel.Hide();
                     redButton.Hide();
                     EventLabel.Text = "You are close enough to the group now that there is no need to lock on \n You fire on the group, hitting on ship, destroying it instantly";
@@ -596,6 +621,7 @@ namespace adventureGame
                     break;
 
                 case 19:
+                    ScenePictureBox.Image = Properties.Resources.warp2;
                     redLabel.Hide();
                     redButton.Hide();
                     EventLabel.Text = "You select a recent destination from your console and warp out, seeing the remaining two ships close behind as you leave the system";
@@ -604,6 +630,7 @@ namespace adventureGame
                     Refresh();
                     break;
                 case 19.1:
+                    ScenePictureBox.Image = Properties.Resources.deadstar_Warp_plus_ships;
                     EventLabel.Text = "You arrive to see a dead star looming in front of you \n You also see the black ships arrive behind you";
                     blueLabel.Text = "Continue";
                     whiteNoise.Play();
@@ -611,6 +638,7 @@ namespace adventureGame
                     break;
 
                 case 20:
+                    ScenePictureBox.Image = Properties.Resources.evil_explode;
                     redLabel.Hide();
                     redButton.Hide();
                     EventLabel.Text = "You fire off as much of your arsenal as you can in one burst, striking the ship on the left \n  The ship on the right still stands.";
@@ -625,6 +653,7 @@ namespace adventureGame
                     Refresh();
                     break;
                 case 20.2:
+                    ScenePictureBox.Image = Properties.Resources.explosionPic;
                     EventLabel.Text = "The ship doesn't slow it's attack, overwhelming you and destroying your ship completely ";
                     blueLabel.Text = "Continue";
                     explosion.Play();
@@ -632,6 +661,7 @@ namespace adventureGame
                     break;
 
                 case 21:
+                    ScenePictureBox.Image = Properties.Resources.evil_firing;
                     redButton.Show();
                     redLabel.Show();
                     EventLabel.Text = "The two ship open fire on you, damaging your right engine, forcing you to head towards one of the near-by planets";
@@ -642,6 +672,7 @@ namespace adventureGame
                     break;
 
                 case 22:
+                    ScenePictureBox.Image = Properties.Resources.rock_crash;
                     redLabel.Hide();
                     redButton.Hide();
                     EventLabel.Text = "You hurtle towards a rocky planet, smashing into the surface with considerable force.";
@@ -664,18 +695,21 @@ namespace adventureGame
                     Refresh();
                     break;
                 case 22.3:
+                    ScenePictureBox.Image = Properties.Resources.death;
                     EventLabel.Text = "They observe your state silently, before walking off, leaving you to die";
                     blueLabel.Text = "Continue";
                     death.Play();
                     Refresh();
                     break;
                 case 22.4:
+                    ScenePictureBox.Image = Properties.Resources.death;
                     EventLabel.Text = "As the figures draw near, one draws a sidearm, and fires";
                     blueLabel.Text = "Continue";
                     death.Play();
                     Refresh();
                     break;
                 case 22.5:
+                    ScenePictureBox.Image = Properties.Resources.death;
                     EventLabel.Text = "As the figures near your location, one draws a knife, hurling it with considerable force into your chest, killing you";
                     blueLabel.Text = "Continue";
                     death.Play();
@@ -683,6 +717,7 @@ namespace adventureGame
                     break;
 
                 case 23:
+                    ScenePictureBox.Image = Properties.Resources.ice_crash;
                     EventLabel.Text = "You land hot on a planet draped in snow \n Exiting your ship, you see the two black ships landing a few hundred meters away ";
                     blueLabel.Text = "Hide";
                     redLabel.Text = "Approach the ships";
@@ -691,6 +726,7 @@ namespace adventureGame
                     break;
 
                 case 24:
+                    ScenePictureBox.Image = Properties.Resources.approach;
                     redLabel.Hide();
                     redButton.Hide();
                     EventLabel.Text = "You climb from the wreckage of your ship, drawing your weapon and advancing towards the pair of sinister black ships";
@@ -708,6 +744,7 @@ namespace adventureGame
                     break;
 
                 case 25:
+                    ScenePictureBox.Image = Properties.Resources.stumble;
                     redLabel.Hide();
                     redButton.Hide();
                     EventLabel.Text = "You swing your weapon towards the right figure, firing as it stands \n The shot hits thick armor";
@@ -723,6 +760,7 @@ namespace adventureGame
                     break;
 
                 case 26:
+                    ScenePictureBox.Image = Properties.Resources.stumble;
                     redLabel.Hide();
                     redButton.Hide();
                     EventLabel.Text = "You aim and fire at the left figure, you shot glancing off of one of the plates covering the figure's abdomen";
@@ -747,6 +785,7 @@ namespace adventureGame
                     break;
 
                 case 27:
+                    ScenePictureBox.Image = Properties.Resources.hiding;
                     redLabel.Hide();
                     redButton.Hide();
                     EventLabel.Text = "You quickly duck behind the wreckage of your ship and bury yourself in the snow";
@@ -769,12 +808,14 @@ namespace adventureGame
                     Refresh();
                     break;
                 case 27.3:
+                    ScenePictureBox.Image = Properties.Resources.hiding_dead;
                     EventLabel.Text = "You find yourself unable to move, and suddenly realize that you cannot feel any of your extremities \n You die of hypothermia";
                     blueLabel.Text = "Continue";
                     death.Play();
                     Refresh();
                     break;
                 case 27.4:
+                    ScenePictureBox.Image = Properties.Resources.trade_post;
                     EventLabel.Text = "You stand up and shake off the snow, spying a trade post in the distance \n You begin your trek towards it, free of the mysterious ships that have caused your current situation.";
                     blueLabel.Text = "Continue";
                     ingameWin.Play();
@@ -782,6 +823,7 @@ namespace adventureGame
                     break;
 
                 case 28:
+                    ScenePictureBox.Image = Properties.Resources.run;
                     redButton.Hide();
                     redLabel.Hide();
                     yellowLabel.Hide();
@@ -797,6 +839,7 @@ namespace adventureGame
                     Refresh();
                     break;
                 case 28.1:
+                    ScenePictureBox.Image = Properties.Resources.death;
                     EventLabel.Text = "The figure stands tall once more, aiming its rifle straight at your head, a red laser burning into your retinas \n It fires.";
                     blueLabel.Text = "Continue";
                     shoot.Play();
@@ -804,6 +847,7 @@ namespace adventureGame
                     break;
 
                 case 29:
+                    ScenePictureBox.Image = Properties.Resources.kickpic;
                     greenButton.Hide();
                     greenLabel.Hide();
                     EventLabel.Text = "You swing your leg in a wide arc around your base, sending a thick mist of white snow shooting off ten feet from you";
@@ -815,6 +859,7 @@ namespace adventureGame
                     break;
 
                 case 30:
+                    ScenePictureBox.Image = Properties.Resources.aim;
                     redButton.Hide();
                     redLabel.Hide();
                     yellowLabel.Hide();
@@ -829,6 +874,7 @@ namespace adventureGame
                     break;
 
                 case 31:
+                    ScenePictureBox.Image = Properties.Resources.run;
                     redButton.Hide();
                     redLabel.Hide();
                     yellowLabel.Hide();
@@ -840,6 +886,7 @@ namespace adventureGame
                     break;
 
                 case 32:
+                    ScenePictureBox.Image = Properties.Resources.kickpic;
                     EventLabel.Text = "You repeat your last action, prolonging the mist hanginging around you";
                     blueLabel.Text = "Kick more snow";
                     redLabel.Text = "Take cover";
@@ -849,6 +896,7 @@ namespace adventureGame
                     break;
 
                 case 33:
+                    ScenePictureBox.Image = Properties.Resources.kickpic;
                     EventLabel.Text = "You repeat your last action, prolonging the mist hanginging around you";
                     blueLabel.Text = "Kick more snow";
                     redLabel.Text = "Take cover";
@@ -858,6 +906,7 @@ namespace adventureGame
                     break;
 
                 case 34:
+                    ScenePictureBox.Image = Properties.Resources.kickpic;
                     EventLabel.Text = "You repeat your last action, prolonging the mist hanginging around you";
                     blueLabel.Text = "Kick more snow";
                     redLabel.Text = "Take cover";
@@ -867,6 +916,7 @@ namespace adventureGame
                     break;
 
                 case 35:
+                    ScenePictureBox.Image = Properties.Resources.snowmanPic;
                     redButton.Hide();
                     redLabel.Hide();
                     yellowLabel.Hide();
@@ -893,6 +943,7 @@ namespace adventureGame
                     break;
 
                 case 36:
+                    ScenePictureBox.Image = Properties.Resources.death;
                     redButton.Hide();
                     redLabel.Hide();
                     yellowLabel.Hide();
@@ -906,6 +957,7 @@ namespace adventureGame
                     break;
 
                 case 37:
+                    ScenePictureBox.Image = Properties.Resources.firing;
                     redButton.Hide();
                     redLabel.Hide();
                     yellowLabel.Hide();
@@ -924,18 +976,21 @@ namespace adventureGame
                     Refresh();
                     break;
                 case 37.2:
+                    ScenePictureBox.Image = Properties.Resources.death;
                     EventLabel.Text = "You miss slightly, the shot hitting the cold metal of the ship behind the figure, who finishes drawing its weapon, shooting to kill";
                     blueLabel.Text = "Continue";
                     shoot.Play();
                     Refresh();
                     break;
                 case 37.3:
+                    ScenePictureBox.Image = Properties.Resources.enemy_death;
                     EventLabel.Text = "You score a hit, sending the figure reeling, blood dripping from the wound, you quickly sprint over finishing the job";
                     blueLabel.Text = "Continue";
                     impact.Play();
                     Refresh();
                     break;
                 case 37.4:
+                    ScenePictureBox.Image = Properties.Resources.enemy_closeup;
                     redButton.Show();
                     redLabel.Show();
                     EventLabel.Text = "There is now only one enemy left, you spin around to face it, standing, seething at the foot of its ship's landing gear \n A scuff is visible on its right abdominal plate";
@@ -946,6 +1001,7 @@ namespace adventureGame
                     break;
 
                 case 38:
+                    ScenePictureBox.Image = Properties.Resources.firing;
                     redButton.Hide();
                     redLabel.Hide();
                     EventLabel.Text = "You carefully check your weapon's battery \n Seeing it has seven shots left, you raise your weapon and fire three shots quickly";
@@ -960,6 +1016,7 @@ namespace adventureGame
                     Refresh();
                     break;
                 case 38.2:
+                    ScenePictureBox.Image = Properties.Resources.hang_from_ship;
                     EventLabel.Text = "Suddenly, the ship begins to rise, and you see that the figure has a glowing panel on its arm, controlling the ship remotely \n Grasping the leg of the landing gear, the figure rises into the air, drawing its weapon";
                     blueLabel.Text = "Continue";
                     engine.Play();
@@ -972,6 +1029,7 @@ namespace adventureGame
                     Refresh();
                     break;
                 case 38.4:
+                    ScenePictureBox.Image = Properties.Resources.death;
                     EventLabel.Text = "The ship turns to face you, the main forward guns spark up, eviscerating you in an instant";
                     blueLabel.Text = "Continue";
                     death.Play();
@@ -987,12 +1045,14 @@ namespace adventureGame
                     Refresh();
                     break;
                 case 38.6:
+                    ScenePictureBox.Image = Properties.Resources.firing;
                     EventLabel.Text = "You raise you gun at the ship and fire two of your last 4 shot, scoring a hit on an exposed area of the engine \n The figure drops from the smoking ship, landing with a crunch in the fresh snow.";
                     blueLabel.Text = "Continue";
                     shoot.Play();
                     Refresh();
                     break;
                 case 38.7:
+                    ScenePictureBox.Image = Properties.Resources.onworld_explode;
                     redButton.Show();
                     redLabel.Show();
                     EventLabel.Text = "The ship begins an uncontrollable spin, sending in into a line of dead trees a few hundred meters away, spewing fire a skyscraper's height into the sky";
@@ -1003,6 +1063,7 @@ namespace adventureGame
                     break;
 
                 case 39:
+                    ScenePictureBox.Image = Properties.Resources.enemy_closeup;
                     redButton.Hide();
                     redLabel.Hide();
                     EventLabel.Text = "You reach down to pick up the fallen figure's rifle, keeping eyes on the enraged figure the whole while";
@@ -1011,6 +1072,7 @@ namespace adventureGame
                     Refresh();
                     break;
                 case 39.1:
+                    ScenePictureBox.Image = Properties.Resources.death;
                     EventLabel.Text = "You suddenly feel a sharp pain in your neck, no weapon has been draw on your foe's side, you look down slowly.";
                     blueLabel.Text = "Continue";
                     death.Play();
@@ -1024,6 +1086,7 @@ namespace adventureGame
                     break;
 
                 case 40:
+                    ScenePictureBox.Image = Properties.Resources.aim;
                     redButton.Hide();
                     redLabel.Hide();
                     EventLabel.Text = "You wait for the figure to rise to its full height, exposing a chip in a plate right at the base of its neck";
@@ -1032,18 +1095,21 @@ namespace adventureGame
                     Refresh();
                     break;
                 case 40.1:
+                    ScenePictureBox.Image = Properties.Resources.firing;
                     EventLabel.Text = "You shoot just once and aim to kill";
                     blueLabel.Text = "Continue";
                     shoot.Play();
                     Refresh();
                     break;
                 case 40.2:
+                    ScenePictureBox.Image = Properties.Resources.enemy_death;
                     EventLabel.Text = "You hit the figure right in the weak link in its armor \n It crumples to the floor, motionless";
                     blueLabel.Text = "Continue";
                     impact.Play();
                     Refresh();
                     break;
                 case 40.3:
+                    ScenePictureBox.Image = Properties.Resources.landinggear;
                     EventLabel.Text = "It is finally over, you look around at the chaos surrounding you \n You turn back to the only ship left standing and climb in, now free to continue your voyage across the cosmos unheeded \n For now.";
                     blueLabel.Text = "Continue";
                     ingameWin.Play();
@@ -1051,6 +1117,7 @@ namespace adventureGame
                     break;
 
                 case 41:
+                    ScenePictureBox.Image = Properties.Resources.aim;
                     EventLabel.Text = "You duck behind a rock just as a shot whizzes past you ear \n You wait only a moment before thrusting your gun out ahead of the rest of your body.";
                     blueLabel.Text = "Continue";
                     impact.Play();
@@ -1064,6 +1131,7 @@ namespace adventureGame
                     break;
 
                 case 97:
+                    ScenePictureBox.Image = Properties.Resources.fly_off_win;
                     redButton.Show();
                     redLabel.Show();
                     EventLabel.Text = "You fly off without looking back, off into the blackness of space \n \n  Congratulations on surviving!";
@@ -1074,6 +1142,7 @@ namespace adventureGame
                     break;
 
                 case 98:
+                    ScenePictureBox.Image = Properties.Resources.fly_off_runaway;
                     redButton.Show();
                     redLabel.Show();
                     EventLabel.Text = "You continue on your way, hoping to put this day's events behind you";
@@ -1084,6 +1153,7 @@ namespace adventureGame
                     break;
 
                 case 99:
+                    ScenePictureBox.Image = Properties.Resources.deathScreen;
                     redButton.Show();
                     redLabel.Show();
                     EventLabel.Text = "You have died.";

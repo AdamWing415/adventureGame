@@ -10,6 +10,11 @@ using System.Windows.Forms;
 
 namespace adventureGame
 {
+    /// <summary>
+    /// Adam Wingert 
+    /// Adventure Game
+    /// 7/4/2020
+    /// </summary>
     public partial class Form1 : Form
     {
         public Form1()

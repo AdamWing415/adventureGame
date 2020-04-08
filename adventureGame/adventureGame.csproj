@@ -179,5 +179,122 @@
   <ItemGroup>
     <None Include="Resources\spaceWhiteNoise.wav" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\onworld explode.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hang from ship.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\enemy death.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\death.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\snow kick.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\snowman.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trade post.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\approach in ship.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\evil explode.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deadstar Warp plus ships.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\evil firing.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warp trade plus ships.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nebula.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hiding-dead.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hiding.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\firing.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\approach.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\run.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bridge closeup.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warp2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warp1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4ships enter%28edited%29 - Copy.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\death screen.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\explosion.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fly off win.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stumble.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\enemy closeup.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aim.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ice crash.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rock crash.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\evil closeup.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gravity pull.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3planets enter.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3planets.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deadstar Warp.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fly off runaway.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warp trade.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\evil enter.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\landinggear.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
