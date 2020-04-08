@@ -176,6 +176,7 @@
             this.ScenePictureBox.Location = new System.Drawing.Point(15, 135);
             this.ScenePictureBox.Name = "ScenePictureBox";
             this.ScenePictureBox.Size = new System.Drawing.Size(869, 430);
+            this.ScenePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ScenePictureBox.TabIndex = 9;
             this.ScenePictureBox.TabStop = false;
             // 

@@ -28,11 +28,12 @@ namespace adventureGame
 
         private void gameScreen_Load(object sender, EventArgs e)
         {
-            ScenePictureBox.Image = Properties.Resources._3planets_enter;
+            
             EventLabel.Text = "You enter a new star system";
             redLabel.Text = "Stop here";
             blueLabel.Text = "Continue onward";
             warp.Play();
+            ScenePictureBox.Image = Properties.Resources._3planets_enter;
             Refresh();
         }
 
@@ -599,6 +600,8 @@ namespace adventureGame
                     ScenePictureBox.Image = Properties.Resources.evil_explode;
                     redLabel.Hide();
                     redButton.Hide();
+                    yellowLabel.Hide();
+                    yellowButton.Hide();
                     EventLabel.Text = "You are close enough to the group now that there is no need to lock on \n You fire on the group, hitting on ship, destroying it instantly";
                     blueLabel.Text = "Continue";
                     shipFiring.Play();
@@ -853,7 +856,7 @@ namespace adventureGame
                     EventLabel.Text = "You swing your leg in a wide arc around your base, sending a thick mist of white snow shooting off ten feet from you";
                     blueLabel.Text = "Kick more snow";
                     redLabel.Text = "Take cover";
-                    yellowLabel.Text = "Chrage";
+                    yellowLabel.Text = "Charge";
                     kick.Play();
                     Refresh();
                     break;
@@ -890,7 +893,7 @@ namespace adventureGame
                     EventLabel.Text = "You repeat your last action, prolonging the mist hanginging around you";
                     blueLabel.Text = "Kick more snow";
                     redLabel.Text = "Take cover";
-                    yellowLabel.Text = "Chrage";
+                    yellowLabel.Text = "Charge";
                     kick.Play();
                     Refresh();
                     break;
@@ -900,7 +903,7 @@ namespace adventureGame
                     EventLabel.Text = "You repeat your last action, prolonging the mist hanginging around you";
                     blueLabel.Text = "Kick more snow";
                     redLabel.Text = "Take cover";
-                    yellowLabel.Text = "Chrage";
+                    yellowLabel.Text = "Charge";
                     kick.Play();
                     Refresh();
                     break;
@@ -910,7 +913,7 @@ namespace adventureGame
                     EventLabel.Text = "You repeat your last action, prolonging the mist hanginging around you";
                     blueLabel.Text = "Kick more snow";
                     redLabel.Text = "Take cover";
-                    yellowLabel.Text = "Chrage";
+                    yellowLabel.Text = "Charge";
                     kick.Play();
                     Refresh();
                     break;
@@ -1153,7 +1156,7 @@ namespace adventureGame
                     break;
 
                 case 99:
-                    ScenePictureBox.Image = Properties.Resources.deathScreen;
+                    ScenePictureBox.Image = Properties.Resources.death_screen;
                     redButton.Show();
                     redLabel.Show();
                     EventLabel.Text = "You have died.";
