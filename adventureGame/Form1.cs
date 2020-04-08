@@ -24,6 +24,7 @@ namespace adventureGame
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //code to load the usercontrol centred on the screen and shift control to the user control
             Form Form1 = this.FindForm();
             Form1.Controls.Remove(this);
             gameScreen s1 = new gameScreen();

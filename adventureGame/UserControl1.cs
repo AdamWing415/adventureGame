@@ -15,10 +15,16 @@ namespace adventureGame
 
     public partial class gameScreen : UserControl
     {
+       
+        //creates random  variable
         Random randCheck = new Random();
+        //initializes variable for scene
         double scene = 1;
+        //initializes variable for my random
         int rand;
+        //initializes bool for if the game is paused
         bool pause = false;
+        //adds a sound to be played when first loaded and later in other scenes
         SoundPlayer warp = new SoundPlayer(Properties.Resources.warp_sound);
 
         public gameScreen()
@@ -28,7 +34,7 @@ namespace adventureGame
 
         private void gameScreen_Load(object sender, EventArgs e)
         {
-            
+            //activates events for scene 1 on loadup as the case is contained in a keypress event, meaning a key must be pressed for the case to load, which means taht the scene wouldn't display on boot up
             EventLabel.Text = "You enter a new star system";
             redLabel.Text = "Stop here";
             blueLabel.Text = "Continue onward";
@@ -38,17 +44,18 @@ namespace adventureGame
         }
 
 
-
+        //initializes key presses
         private void gameScreen_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.B && pause == false)//blue button press
+            //blue button press and subsequent scene changes
+            if (e.KeyCode == Keys.B && pause == false)
             {
                 if (scene == 1) { scene = 2; }
 
                 else if (scene == 2)
                 {
+                    //random check for which scene  to continue on to
                     rand = randCheck.Next(1, 4);
-
                     if (rand == 1) { scene = 9; }
                     else if (rand == 2) { scene = 7; }
                     else if (rand == 3) { scene = 6; }
@@ -59,6 +66,7 @@ namespace adventureGame
 
                 else if (scene == 4)
                 {
+                    //random check for which scene  to continue on to
                     rand = randCheck.Next(1, 4);
                     if (rand == 1) { scene = 9; }
                     else if (rand == 2) { scene = 7; }
@@ -67,6 +75,7 @@ namespace adventureGame
 
                 else if (scene == 5)
                 {
+                    //random check for which scene  to continue on to
                     rand = randCheck.Next(1, 11);
                     if (rand <= 5) { scene = 5.1; }
                     else if (rand == 10) { scene = 5.3; }
@@ -99,6 +108,7 @@ namespace adventureGame
                 else if (scene == 13.1) { scene = 13.2; }
                 else if (scene == 13.2)
                 {
+                    //random check for which scene  to continue on to
                     rand = randCheck.Next(1, 11);
                     if (rand == 1) { scene = 13.3; }
                     else { scene = 13.4; }
@@ -132,6 +142,7 @@ namespace adventureGame
                 else if (scene == 22.1) { scene = 22.2; }
                 else if (scene == 22.2)
                 {
+                    //random check for which scene  to continue on to
                     rand = randCheck.Next(1, 4);
                     if (rand == 1) { scene = 22.3; }
                     else if (rand == 2) { scene = 22.4; }
@@ -156,6 +167,7 @@ namespace adventureGame
                 else if (scene == 27.1) { scene = 22.2; }
                 else if (scene == 27.2)
                 {
+                    //random check for which scene  to continue on to
                     rand = randCheck.Next(1, 3);
                     if (rand == 1) { scene = 27.3; }
                     else if (rand == 2) { scene = 27.4; }
@@ -189,6 +201,7 @@ namespace adventureGame
                 else if (scene == 37) { scene = 37.1; }
                 else if (scene == 37.1)
                 {
+                    //random check for which scene  to continue on to
                     rand = randCheck.Next(1, 6);
                     if (rand == 1 || rand == 2 || rand == 3) { scene = 37.3; }
                     else if (rand == 4 || rand == 5) { scene = 37.2; }
@@ -202,6 +215,7 @@ namespace adventureGame
                 else if (scene == 38.2) { scene = 38.3; }
                 else if (scene == 38.3)
                 {
+                    //random check for which scene  to continue on to
                     rand = randCheck.Next(1, 6);
                     if (rand == 1) { scene = 38.4; }
                     else if (rand == 2 || rand == 3) { scene = 38.5; }
@@ -232,7 +246,8 @@ namespace adventureGame
 
             }
 
-            else if (e.KeyCode == Keys.M && pause == false) //red button pressed
+            //red button pressed
+            else if (e.KeyCode == Keys.M && pause == false) 
             {
                 if (scene == 1) { scene = 3; }
 
@@ -276,6 +291,7 @@ namespace adventureGame
 
                 else if (scene == 38.7) { scene = 41; }
 
+                //scenes where you can quit, and close the application are here
                 else if (scene == 97) { System.Windows.Forms.Application.Exit(); }
 
                 else if (scene == 98) { System.Windows.Forms.Application.Exit(); }
@@ -284,7 +300,8 @@ namespace adventureGame
 
             }
 
-            else if (e.KeyCode == Keys.N) //yellow button pressed
+            //yellow button pressed
+            else if (e.KeyCode == Keys.N) 
             {
                 if (scene == 14) { scene = 15; }
 
@@ -298,14 +315,19 @@ namespace adventureGame
 
                 else if (scene == 34) { scene = 31; }
             }
-            else if (e.KeyCode == Keys.Space) //green button pressed
+
+            //green button pressed
+            else if (e.KeyCode == Keys.Space) 
             {
 
                 if (scene == 26.1) { scene = 28; }
 
             }
+
+            //pause button pressed
             else if (e.KeyCode == Keys.Escape) //pause button pressed
             {
+                //brings up the pause menu 
                 pause = true;
 
                 pauseBlue.Show();
@@ -317,6 +339,7 @@ namespace adventureGame
             }
             if (e.KeyCode == Keys.B && pause == true)
             {
+                //checks for button press when the game is paused
                 pauseBack.Hide();
                 pauseBlue.Hide();
                 pauseRed.Hide();
@@ -327,9 +350,11 @@ namespace adventureGame
             }
             if (e.KeyCode == Keys.M && pause == true)
             {
+                //exits the program if teh red button is pressed while paused
                 System.Windows.Forms.Application.Exit();
             }
-
+             
+            //adds sounds to be used and re-used throughout the scenes
             SoundPlayer whiteNoise = new SoundPlayer(Properties.Resources.spaceWhiteNoise);
             SoundPlayer engine = new SoundPlayer(Properties.Resources.engineNoise);
             SoundPlayer explosion = new SoundPlayer(Properties.Resources.explosion);
@@ -347,6 +372,7 @@ namespace adventureGame
             SoundPlayer winScreen = new SoundPlayer(Properties.Resources.win_screen);
             SoundPlayer deathScreen = new SoundPlayer(Properties.Resources.deathScreen);
 
+            //switch statement for scene,  displays propper text, image, buttons, and sound for each scenario
             switch (scene)
             {
                 case 1:
