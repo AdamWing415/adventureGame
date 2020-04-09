@@ -125,7 +125,7 @@ namespace adventureGame
 
                 else if (scene == 17) { scene = 18; }
 
-                else if (scene == 18) { scene = 181; }
+                else if (scene == 18) { scene = 18.1; }
                 else if (scene == 18.1) { scene = 18.2; }
                 else if (scene == 18.2) { scene = 20; }
 
