@@ -599,6 +599,8 @@ namespace adventureGame
 
                 case 16:
                     ScenePictureBox.Image = Properties.Resources.evil_firing;
+                    yellowButton.Hide();
+                    yellowLabel.Hide();
                     redLabel.Hide();
                     redButton.Hide();
                     EventLabel.Text = "You lock on and fire, but before the plasma bolt reaches the group of ships, they break into evasive maneuvers \n Your bolt flies straight through the pack and the ships whip around to face you  ";
