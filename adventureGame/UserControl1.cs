@@ -617,6 +617,8 @@ namespace adventureGame
 
                 case 17:
                     ScenePictureBox.Image = Properties.Resources.approach_in_ship;
+                    yellowLabel.Hide();
+                    yellowButton.Hide();
                     EventLabel.Text = "Slowly, you continue your flight towards the now near stationary group of ships";
                     blueLabel.Text = "Fire";
                     redLabel.Text = "Hail";
