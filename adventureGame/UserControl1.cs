@@ -373,6 +373,7 @@ namespace adventureGame
             SoundPlayer deathScreen = new SoundPlayer(Properties.Resources.deathScreen);
 
             //switch statement for scene,  displays propper text, image, buttons, and sound for each scenario
+            //decimal point scenes are continuations of whole number scenes, without choice
             switch (scene)
             {
                 case 1:
